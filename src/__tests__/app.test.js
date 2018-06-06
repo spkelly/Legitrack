@@ -5,7 +5,7 @@ describe('Setup Tests', () =>{
   });
 
   it('Renders a React component without crashing',()=>{
-    
-  })
+    // TODO: (sean) add react component test
+  });
 
 })
