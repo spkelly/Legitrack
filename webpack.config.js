@@ -6,6 +6,7 @@ const htmlPlugin = new HTMLWebPackPlugin({
 });
 
 module.exports = {
+  'watch': true,
   'module':{
     'rules':[
       {
@@ -19,15 +20,7 @@ module.exports = {
         'test': /\.scss$/,
         'exclude': /node_modules/,
         'use':[
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css=loader',
-          },
-          {
-            loader: 'sass-loader'
-          }
+          'style-loader','css-loader','sass-loader'
         ]
       }
     ]
