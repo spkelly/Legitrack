@@ -10,12 +10,12 @@ import Bill from './components/Bill/Bill';
 
 const history = createBrowserHistory();
 
-const Index = () =>{
+const Index = () => {
     return (
     <Router history={history}>
         <div>
-            <Route exact path="/"component={HomePage} />
-            <Route exact path="/bill" component={Bill} />
+            <Route exact path="/" component={ HomePage } />
+            <Route exact path="/bill" component={ Bill } />
         </div>
     </Router>
     );
