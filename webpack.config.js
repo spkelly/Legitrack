@@ -1,12 +1,31 @@
 const HTMLWebPackPlugin = require('html-webpack-plugin');
-
+const path = require('path');
+// const CSSExtractWebpackPlugin = require('mini-css-extract-plugin');
 const htmlPlugin = new HTMLWebPackPlugin({
   template: './src/index.html',
-  filename: './index.html'
+  filename: 'index.html'
 });
 
+// const CSSExtractPlugin = new CSSExtractWebpackPlugin({
+//   filename:'[name].css'
+// }); 
+
+// console.log(CSSExtractPlugin);
+
 module.exports = {
-  'watch': true,
+  'entry': './src/index.js',
+  
+  'output': {
+    'path': path.resolve(__dirname, 'dist'),
+    'filename': 'bundle.js',
+    'publicPath': '/'
+  },
+
+
+  'devServer': {
+    'historyApiFallback': true,
+  },
+  
   'module':{
     'rules':[
       {
@@ -25,5 +44,7 @@ module.exports = {
       }
     ]
   },
-  plugins:[htmlPlugin]
+  plugins:[
+    htmlPlugin
+  ]
 };
