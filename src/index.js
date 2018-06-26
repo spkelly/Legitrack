@@ -11,9 +11,7 @@ const Index = () => {
     return (
     <Provider store={store}>
         <BrowserRouter>
-            <Switch>
                 <Routes />
-            </Switch>
         </BrowserRouter>
     </Provider>
     );

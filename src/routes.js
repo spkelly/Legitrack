@@ -9,9 +9,10 @@ import Results from './components/Results/Results';
 const Routes = (props) => {
 	return(
 		<div>
-			<Route exact path="/" component={ Home }></Route>
-			<Route path="/results" compornent={ Results }></Route>
+			
+			<Route path="/search" component={ Results }></Route>
 			<Route path="/bill/:id" component = { Bill }></Route>
+			<Route exact path="/" component={ Home }></Route>
 		</div>
 	)
 }
