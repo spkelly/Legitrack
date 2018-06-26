@@ -1,24 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route } from 'react-router';
-import createBrowserHistory from 'history/createBrowserHistory';
+import {BrowserRouter, Switch} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import store from './store';
+import Routes from './routes';
 
 import './stylesheets/main.scss';
 
-import HomePage from './components/Home/Home';
-import Bill from './components/Bill/Bill';
-
-const history = createBrowserHistory();
-
 const Index = () => {
     return (
-    <Router history={history}>
-        <div>
-            <Route exact path="/" component={ HomePage } />
-            <Route exact path="/bill" component={ Bill } />
-        </div>
-    </Router>
+    <Provider store={store}>
+        <BrowserRouter>
+            <Switch>
+                <Routes />
+            </Switch>
+        </BrowserRouter>
+    </Provider>
     );
-}
+};
+
 
 ReactDOM.render(<Index />, document.getElementById('index'));
