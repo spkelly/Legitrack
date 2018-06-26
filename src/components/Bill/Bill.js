@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTest } from '../../actions/index';
 import * as actions from '../../actions';
 import BillHeading from './BillHeading';
 import BillDescription from './BillDescription';
@@ -33,7 +32,7 @@ function mapStateToProps(state, ownProps){
   return{
     currentBill: state.bill
   }
-};
+};  
 
 
 export default connect(mapStateToProps, actions)(Bill);
