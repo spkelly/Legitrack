@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import * as actions from '../../actions';
 import BillHeading from './BillHeading';
 import BillDescription from './BillDescription';
@@ -11,7 +12,7 @@ import _ from 'lodash';
 class Bill extends Component {
 
   componentWillMount(){
-    if(_.isEmpty(this.props.currentBill)) this.props.fetchTest();
+    this.props.fetchBill(this.props.match.params.id);
   }
 
 
@@ -19,6 +20,7 @@ class Bill extends Component {
     console.log('hello ', this.props);
     return (
       <div className="bill">
+        <button onClick={this.props.history.goBack}>back</button>
         <BillHeading title={this.props.currentBill.title} number={this.props.currentBill.number} />
         <BillDescription text={this.props.currentBill.description} />
         <BillSponsors sponsors={this.props.currentBill.sponsors} />
