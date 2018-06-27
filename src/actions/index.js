@@ -1,8 +1,8 @@
 import axios from 'axios';
 import {FETCH_TEST, FETCH_BILL, FETCH_SEARCH} from './types';
 
-const TEST_URL = 'http://localhost:8080/bill/1053030';
-const ROOT_URL = 'http://localhost:8080'
+const TEST_URL = 'http://localhost:3000/bill/1053030';
+const ROOT_URL = 'http://localhost:3000'
 
 export function fetchTest(){
   const testBill = axios.get(TEST_URL);
@@ -22,7 +22,7 @@ export function fetchBill(id){
   }
 }
 export function fetchSearch(query){
-  const result = axios.get(`${ROOT_URL}/search/${query}`);
+  const result = axios.get(`${ROOT_URL}/search?q=${query}`);
 
   return{
     type: FETCH_SEARCH,
