@@ -1,0 +1,28 @@
+.search{
+  &__label{
+    font-size: 3.6rem;
+  }
+
+  &__input{
+    font-sizE: 3.6rem;
+    border: 1px solid #777;
+  }
+
+  &__submit{
+    font-size: 3.6rem;
+    padding: 0 .5rem;
+    border: 1px solid #777;
+    border-image-slice: 100%;
+    border-image-outset: 0px;
+  }
+
+  &__err{
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: red;
+    border: 1px solid red;
+    background-color: lightcoral;
+    width: 20%;
+    margin: 2rem auto;
+  }
+}
