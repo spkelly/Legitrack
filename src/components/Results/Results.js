@@ -4,6 +4,9 @@ import queyrString from 'query-string';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+
+import Search from '../search';
+
 //TODO: seperate into container 
 class Results extends Component{
 
@@ -35,6 +38,7 @@ class Results extends Component{
   render(){
     return(
       <div className="results">
+        <Search cb={this.props.fetchSearch} />
         <h1 className="results__header">Test Search Result</h1>
         {this.renderResults()}
 

@@ -20,7 +20,6 @@ class Home extends Component{
       <div className="home">
 
         <Promo>
-          <label>Search for a bill</label>
           <Search cb={this.performSearch}/>
         </Promo>
       </div>

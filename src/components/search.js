@@ -10,7 +10,7 @@ class Search extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
+  // check to see if the inputs length is larger then three
   validateInput(input){
     if (input.length > 3 ){
       return true
@@ -36,8 +36,8 @@ class Search extends Component {
     return (
       <form className="search">
         <input className="search__input" value={this.state.input} onChange={this.handleChange}/>
-        <button className="search__submit" onClick={this.handleClick}>Click Me</button>
-        {this.state.err?<div class="err">INVALID SEARCH TERM</div>:""}
+        <button className="search__submit" onClick={this.handleClick}>Search</button>
+        {this.state.err?<div class="search__err">INVALID SEARCH TERM</div>:""}
       </form>
     )
   }
