@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 import Search from '../search';
+import {BarLoader, GridLoader,CircleLoader,ClimbingBoxLoader } from 'react-spinners';
 
 //TODO: seperate into container 
 class Results extends Component{
@@ -16,12 +17,15 @@ class Results extends Component{
 
   componentDidMount(){
     let query = queyrString.parse(this.props.location.search).q
-    if(query) this.props.fetchSearch(query);
+    if(_.isEmpty(this.props.searchResults)){
+      if(query) this.props.fetchSearch(query);
+    }
   }
 
   renderResults(){
     if(!_.isEmpty(this.props.searchResults)){
       let results = this.props.searchResults;
+
       return Object.keys(results).map((key,index)=>{
         // TODO: filter out summary key from resutls list on backend
         if(key!='summary'){
@@ -39,8 +43,8 @@ class Results extends Component{
     return(
       <div className="results">
         <Search cb={this.props.fetchSearch} />
-        <h1 className="results__header">Test Search Result</h1>
-        {this.props.isFetching? <h2>"loading"</h2> : this.renderResults() }
+        <h1 className="results__header">Search Results</h1>
+        {this.props.isFetching?  <div className="grid_spinner"><GridLoader  size={30} /> </div>: this.renderResults() }
       </div>
     )
   }

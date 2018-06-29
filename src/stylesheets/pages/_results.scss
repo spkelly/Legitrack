@@ -1,4 +1,8 @@
 .results{
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
 
   &__header{
     font-size: 2.4rem;
@@ -12,7 +16,6 @@
     padding: 1.2rem 1rem;
     margin: 1rem 0;
     border-bottom: 1px solid black;
-    width: 50%;
     animation: pulse ease-in 1s forwards;
     transition: all ease-in-out 1s;
 
@@ -25,6 +28,11 @@
   &__link{
     text-decoration: none;
   }
+}
+
+.grid_spinner{
+  margin-top: 10rem;
+  align-self: center;
 }
 
 @for $i from 1 through 25 {
