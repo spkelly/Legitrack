@@ -21,7 +21,7 @@ class Results extends Component{
 
   renderResults(){
     if(!_.isEmpty(this.props.searchResults)){
-      let results = this.props.searchResults.results;
+      let results = this.props.searchResults;
       return Object.keys(results).map((key,index)=>{
         // TODO: filter out summary key from resutls list on backend
         if(key!='summary'){
@@ -40,8 +40,7 @@ class Results extends Component{
       <div className="results">
         <Search cb={this.props.fetchSearch} />
         <h1 className="results__header">Test Search Result</h1>
-        {this.renderResults()}
-
+        {this.props.isFetching? <h2>"loading"</h2> : this.renderResults() }
       </div>
     )
   }
@@ -49,7 +48,8 @@ class Results extends Component{
 
 function mapStateToProps(state, ownProps){
   return{
-    searchResults: state.searchResults
+    searchResults: state.searchResults.items,
+    isFetching: state.searchResults.isFetching
   }
 };  
 

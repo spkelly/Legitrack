@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {FETCH_TEST, FETCH_BILL, FETCH_SEARCH} from './types';
+import {FETCH_TEST, FETCH_BILL, FETCH_SEARCH, RECEIVED_SEARCH, REQUEST_SEARCH} from './types';
 
 const TEST_URL = 'http://localhost:3000/bill/1053030';
 const ROOT_URL = 'http://localhost:3000'
@@ -21,11 +21,40 @@ export function fetchBill(id){
     payload: bill
   }
 }
-export function fetchSearch(query){
-  const result = axios.get(`${ROOT_URL}/search?q=${query}`);
 
+export const requestSearch = (query)=>{
   return{
-    type: FETCH_SEARCH,
-    payload: result
+    type:REQUEST_SEARCH,
+    query
   }
+}
+
+export const recieveSearch = (query, json)=>{
+  return {
+    type: RECEIVED_SEARCH,
+    payload: {
+      query:query,
+      data:json
+    }
+  }
+}
+
+// export function fetchSearch(query){
+//   const result = axios.get(`${ROOT_URL}/search?q=${query}`);
+
+//   return{
+//     type: FETCH_SEARCH,
+//     payload: result
+//   }
+// }
+
+export function fetchSearch(query){
+  return dispatch =>{
+    dispatch(requestSearch(query));
+    axios.get(`${ROOT_URL}/search?q=${query}`).then((response)=>{
+    console.log(response);
+    dispatch(recieveSearch(query,response.data.results))
+  });
+  }
+  
 }
