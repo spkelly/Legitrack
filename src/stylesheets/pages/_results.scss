@@ -1,17 +1,35 @@
 .results{
   text-align: center;
 
-    &__header{
-      font-size: 2.4rem;
+  &__header{
+    font-size: 2.4rem;
 
-      margin: 2rem 0;
-    }
+    margin: 2rem 0;
+  }
 
-    &__item{
-      padding: 1.2rem 0;
-      margin: .2rem auto;
-      border: 1px solid black;
-      border-radius: 1rem;
-      width: 50%;
+  &__item{
+    opacity: 0;
+    padding: 1.2rem 0;
+    margin: .2rem auto;
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 25%;
+    animation: pulse ease-in 1s forwards;
+    transition: all 2s ease;
+  }
+
+  &__link{
+    text-decoration: none;
+  }
+}
+
+@for $i from 1 through 25 {
+  .results__item{
+
+    &:nth-child(#{$i}) {
+      
+      // Delay the animation. Delay increases as items loop.
+      animation-delay: $i * (.9s / 8);
     }
+  }
 }
