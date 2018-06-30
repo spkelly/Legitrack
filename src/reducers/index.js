@@ -4,7 +4,7 @@ import search_reducer from './search_reducer';
 
 
 const combinedReducers = combineReducers({
-  bill:bill_reducer,
+  currentBill:bill_reducer,
   searchResults:search_reducer
 });
 
