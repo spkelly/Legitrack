@@ -13,20 +13,28 @@
   &__item{
     font-size: 2.4rem;
     opacity: 0;
-    padding: 1.2rem 1rem;
+    padding: 1.2rem .5rem;
     margin: 1rem 0;
-    border-bottom: 1px solid black;
+
     animation: pulse ease-in 1s forwards;
-    transition: all ease-in-out 1s;
-
+    transition: all ease 150ms;
+    &:not(:last-child){
+      border-bottom: 1px solid black;
+    }
     &:hover {
-      animation-name: activate;
-
+      color: white;
+      background-color: $primary-color;
+    }
+    &:hover .results__link{
+      color: white;
     }
   }
 
   &__link{
+    color: $primary-color;
     text-decoration: none;
+    transition: all ease 150ms;
+
   }
 }
 

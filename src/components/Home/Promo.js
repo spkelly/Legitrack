@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import '../../images/Splash.jpg';
 
 class Promo extends Component{
   render(){

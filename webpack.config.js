@@ -13,34 +13,39 @@ const htmlPlugin = new HTMLWebPackPlugin({
 // console.log(CSSExtractPlugin);
 
 module.exports = {
-  'entry': './src/index.js',
+  entry: './src/index.js',
   
-  'output': {
-    'path': path.resolve(__dirname, 'dist'),
-    'filename': 'bundle.js',
-    'publicPath': '/'
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
 
 
-  'devServer': {
-    'historyApiFallback': true,
+  devServer: {
+    historyApiFallback: true,
   },
-  
-  'module':{
-    'rules':[
+
+  module:{
+    rules:[
       {
-        'test':/\.js$/,
-        'exclude': /node_modules/,
-        'use':{
-          'loader': 'babel-loader'
-        }
+        test:/\.js$/,
+        exclude: /node_modules/,
+        use:['babel-loader']
       },
       {
-        'test': /\.scss$/,
-        'exclude': /node_modules/,
-        'use':[
-          'style-loader','css-loader','sass-loader'
-        ]
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use:['style-loader','css-loader','sass-loader']
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 25000,
+          },
+        },
       }
     ]
   },

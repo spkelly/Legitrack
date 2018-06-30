@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 import Routes from './routes';
 
-import Header from './components/Header/Header';
+import './images/Splash.jpg';
 import './stylesheets/main.scss';
 
 const Index = () => {

@@ -1,4 +1,6 @@
 .home__promo{
   text-align: center;
-  padding: 8rem 0;
+  padding: 30rem 0;
+  background-image: linear-gradient(to bottom right,rgba(blue,.5), rgba($primary-color,.2)), url('../images/Splash.jpg'), ;
+  background-size: cover;
 }
