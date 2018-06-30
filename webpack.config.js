@@ -1,4 +1,5 @@
 const HTMLWebPackPlugin = require('html-webpack-plugin');
+const CompressionPlugin  = require('compression-webpack-plugin')
 const path = require('path');
 // const CSSExtractWebpackPlugin = require('mini-css-extract-plugin');
 const htmlPlugin = new HTMLWebPackPlugin({
@@ -24,7 +25,8 @@ module.exports = {
 
   devServer: {
     historyApiFallback: true,
-    port:8080
+    port:8080,
+    compress: true
   },
 
   module:{
@@ -51,6 +53,13 @@ module.exports = {
     ]
   },
   plugins:[
-    htmlPlugin
+    htmlPlugin,
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ]
 };
