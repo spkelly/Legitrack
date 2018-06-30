@@ -1,6 +1,16 @@
 import axios from 'axios';
-import {FETCH_TEST, FETCH_BILL, FETCH_SEARCH, RECEIVED_SEARCH, REQUEST_SEARCH} from './types';
+import {
+  FETCH_BILL,
+  RECEIVED_SEARCH,
+  REQUEST_SEARCH,
+  RECIEVE_BILL,
+  REQUEST_BILL,
+  FETCH_TEST,
+} from './types';
 
+
+//TODO: Reorder functions in file
+//TODO: Write new fetchBill function
 const TEST_URL = 'http://localhost:3000/bill/1053030';
 const ROOT_URL = 'http://localhost:3000'
 
@@ -22,7 +32,22 @@ export function fetchBill(id){
   }
 }
 
-export const requestSearch = (query)=>{
+export function requestBill(id){
+  return{
+    type:REQUEST_BILL,
+    id:id
+  }
+} 
+
+export const recieveBill = (id, payload) => {
+  return{
+    type:RECIEVE_BILL,
+    payload,
+    id
+  }
+}
+
+export const requestSearch = (query) => {
   return{
     type:REQUEST_SEARCH,
     query
@@ -39,22 +64,15 @@ export const recieveSearch = (query, json)=>{
   }
 }
 
-// export function fetchSearch(query){
-//   const result = axios.get(`${ROOT_URL}/search?q=${query}`);
 
-//   return{
-//     type: FETCH_SEARCH,
-//     payload: result
-//   }
-// }
 
+// TODO: clean up response object
 export function fetchSearch(query){
   return dispatch =>{
     dispatch(requestSearch(query));
     axios.get(`${ROOT_URL}/search?q=${query}`).then((response)=>{
-    console.log(response);
-    dispatch(recieveSearch(query,response.data.results))
-  });
+      dispatch(recieveSearch(query,response.data.results))
+    });
   }
   
 }
