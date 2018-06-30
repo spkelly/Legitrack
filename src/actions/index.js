@@ -22,20 +22,20 @@ export function fetchTest(){
     payload: testBill
   };
 }
+//TODO: (Sean) Remove this when new fetchbill is working
+// export function fetchBill(id){
+//   const bill = axios.get(`${ROOT_URL}/bill/${id}`);
 
-export function fetchBill(id){
-  const bill = axios.get(`${ROOT_URL}/bill/${id}`);
-
-  return{
-    type: FETCH_BILL,
-    payload: bill
-  }
-}
+//   return{
+//     type: FETCH_BILL,
+//     payload: bill
+//   }
+// }
 
 export function requestBill(id){
   return{
     type:REQUEST_BILL,
-    id:id
+    id
   }
 } 
 
@@ -75,4 +75,13 @@ export function fetchSearch(query){
     });
   }
   
+}
+
+export function fetchBill(id){
+  return dispatch =>{
+    dispatch(requestBill(id));
+    axios.get(`${ROOT_URL}/bill/${id}`).then((response) =>{
+      dispatch(recieveBill(id, response))
+    });
+  }
 }
