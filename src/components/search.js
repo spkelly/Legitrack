@@ -11,6 +11,7 @@ class Search extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   // check to see if the inputs length is larger then three
+  // TODO: (Sean) Add more input validation
   validateInput(input){
     if (input.length > 3 ){
       return true
