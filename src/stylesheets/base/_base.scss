@@ -9,9 +9,26 @@
 }
 
 html{
-  font-size: 62.5%;
+  font-size: 62.5%; // makes 1 rem == 10px 
+
+  @include respond(desk-big){
+    font-size: 75%; // makes 1 rem == 12px
+  }
+  @include respond(tablet-port){
+    font-size: 56.25%; // makes 1 rem == 9px
+  }
+  @include respond(tablet){
+    font-size: 50%; //makes 1 rem = 8px
+  }
 }
 
 body{
+  background-color: $color-black;
   box-sizing: border-box;
+
+  padding: 3rem;
+
+  @include respond(tablet){
+    padding: 0;
+  }
 }
