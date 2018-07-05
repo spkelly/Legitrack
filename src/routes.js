@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Bill from './components/Bill/Bill';
 import Results from './components/Results/Results';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const Routes = (props) => {
 	return(
@@ -13,6 +14,7 @@ const Routes = (props) => {
 			<Route path="/search" component={ Results }></Route>
 			<Route path="/bill/:id" component = { Bill }></Route>
 			<Route exact path="/" component={ Home }></Route>
+			<Footer />
 		</div>
 	)
 }
