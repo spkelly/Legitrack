@@ -1,0 +1,35 @@
+// Media Queries
+
+/* 
+Breakpoint ranges:
+
+0 -    600px      Phone
+600 -  900px      Tablet
+900 -  1200px     Tablet(Portrait)
+1200 - 1800px     Desktop
+1800px - ...      Large desktop
+
+*/
+
+@mixin respond-phone{
+  
+}
+
+
+/* 
+@arguments: phone|tablet|tablet-port|desk-big
+*/
+@mixin respond($breakpoint){
+  @if $breakpoint == phone {
+    @media(max-width: 600px){@content};
+  }
+  @if $breakpoint == tablet {
+    @media(max-width: 900px){@content};
+  }
+  @if $breakpoint == tablet-port {
+    @media(max-width: 1200px){@content};
+  }
+  @if $breakpoint == desk-big {
+    @media(min-width: 1800px){@content};
+  }
+}
