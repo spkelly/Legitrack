@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Header from '../Header/Header';
 import Promo from './Promo';
 import Search from '../search';
+import About from './About';
 
 class Home extends Component{
 
@@ -20,8 +21,13 @@ class Home extends Component{
       <div className="home">
 
         <Promo>
-          <Search cb={this.performSearch}/>
+          <h1 className="heading__primary">Welcome To Legitrack</h1>
+          <h2 className="heading__secondary u-margin-bottom-lg">Search any bill from the Colorado State Legislature</h2>
+          <div className="u-center-text">
+            <Search cb={this.performSearch}/>
+          </div>
         </Promo>
+        <About />
       </div>
     );
   }
