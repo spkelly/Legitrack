@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import queyrString from 'query-string';
-
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -43,8 +43,7 @@ class Results extends Component{
     return(
       <div className="results">
         <Search cb={this.props.fetchSearch} />
-        <h1 className="results__header">Search Results</h1>
-        {this.props.isFetching?  <div className="grid_spinner"><GridLoader  size={30} /> </div>: this.renderResults() }
+        {this.props.isFetching?  <div className="grid_spinner"><GridLoader  color={'#fff'} size={30} /> </div>: this.renderResults() }
       </div>
     )
   }
