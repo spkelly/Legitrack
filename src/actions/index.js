@@ -12,7 +12,7 @@ import {
 //TODO: Reorder functions in file
 //TODO: Write new fetchBill function
 const TEST_URL = 'http://localhost:3000/bill/1053030';
-const ROOT_URL = 'http://localhost:3000'
+const ROOT_URL = 'http://legitrack-api.herokuapp.com'
 
 export function fetchTest(){
   const testBill = axios.get(TEST_URL);
