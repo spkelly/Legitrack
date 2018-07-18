@@ -1,9 +1,13 @@
+.home{
+  position: relative;
+}
+
 .home__promo{
   background-color: $primary-color;
   color: $color-white;
   padding: 0 2rem;
-  padding-top:  12rem;
-  height: 50vh;
+  padding-top:  4rem;
+  height: 40rem;
 
   @include respond(phone){
     padding-top: 4rem;
