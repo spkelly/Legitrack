@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 
 import BillHeading from './BillHeading';
+import BillTracker from './BillTracker';
 import BillDescription from './BillDescription';
 import BillSponsors from './BillSponsors';
-import Button from '../Button/Button';
+import VoteContainer from '../Containers/VoteContainer';
 
-// TODO: Seperate redux functionality into container
-// TODO: Clean up renderBill funtion maybe put it in presentational component
 
 export default class Bill extends Component {
-
   render(){
     return (
-      <div>
-        <button onClick={this.props.goBack}>back</button>
+      <div className="bill">
         <BillHeading title={this.props.currentBill.title} number={this.props.currentBill.number} />
-        <BillDescription text={this.props.currentBill.description} />
-        <BillSponsors sponsors={this.props.currentBill.sponsors} />
-        <Button title="Hello World" /> 
+        <div className="bill__details">
+          <BillTracker />
+          <BillDescription text={this.props.currentBill.description} />
+          <BillSponsors sponsors={this.props.currentBill.sponsors} />
+          <VoteContainer votes={this.props.currentBill.votes} />
+        </div>
       </div>
     );
   }
