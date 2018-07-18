@@ -1,5 +1,7 @@
 const HTMLWebPackPlugin = require('html-webpack-plugin');
-const CompressionPlugin  = require('compression-webpack-plugin')
+const CompressionPlugin  = require('compression-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const path = require('path');
 // const CSSExtractWebpackPlugin = require('mini-css-extract-plugin');
 const htmlPlugin = new HTMLWebPackPlugin({
@@ -39,7 +41,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use:['style-loader','css-loader','sass-loader']
+        use:[ MiniCssExtractPlugin.loader,'css-loader','sass-loader']
       },
       {
         test: /\.(jpg|png)$/,
@@ -52,6 +54,13 @@ module.exports = {
       }
     ]
   },
+
+  optimization:{
+    splitChunks:{
+      chunks:"initial"
+    }
+  },
+
   plugins:[
     htmlPlugin,
     new CompressionPlugin({
@@ -60,6 +69,12 @@ module.exports = {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename:  '[id].css' ,
     })
   ]
 };
