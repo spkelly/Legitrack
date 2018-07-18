@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 import Search from '../search';
-import {BarLoader, GridLoader,CircleLoader,ClimbingBoxLoader } from 'react-spinners';
+import {GridLoader} from 'react-spinners';
 
 //TODO: seperate into container 
 class Results extends Component{
@@ -49,7 +49,7 @@ class Results extends Component{
   }
 }
 
-function mapStateToProps(state, ownProps){
+function mapStateToProps(state){
   return{
     searchResults: state.searchResults.items,
     isFetching: state.searchResults.isFetching
