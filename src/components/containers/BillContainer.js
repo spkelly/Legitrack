@@ -6,13 +6,12 @@ import {GridLoader} from 'react-spinners';
 
 import Bill from '../Bill/Bill';
 
-// TODO: Seperate redux functionality into container
-// TODO: Clean up renderBill funtion maybe put it in presentational component
 
 class BillContainer extends Component {
 
 
   componentWillMount(){
+      console.log('here')
       this.props.fetchBill(this.props.match.params.id);
   }
 
