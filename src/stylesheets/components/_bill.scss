@@ -6,9 +6,9 @@
   box-shadow: 0 -4px 6px 2px rgba(black, .2);
   padding: 2rem 1rem;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 4fr;
-  grid-column-gap: 100px;
+  grid-template-rows:1fr max-content;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 10px;
 
   @include respond(phone){
     display: block;
@@ -71,6 +71,10 @@
 .vote__chart{
   width: 50%;
   margin: 0 auto;
+
+  @include respond(phone){
+    width: 100%;
+  }
 }
 .vote{
   font-size: 16px;
@@ -91,6 +95,7 @@
 
 .vote__desc{
   text-align: center;
+  min-height: 210px;
   margin: 2rem;
-  height: 32px;
+  
 }
