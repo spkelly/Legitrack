@@ -14,10 +14,9 @@
 
   &__item{
     font-size: 2.4rem;
-    opacity: 0;
     padding: 1.2rem .5rem;
 
-    animation: pulse ease-in 1s forwards;
+    // animation: pulse ease-in 1s forwards;
     transition: all ease 150ms;
 
     &:not(:last-child){
@@ -45,13 +44,13 @@
   align-self: center;
 }
 
-@for $i from 1 through 25 {
-  .results__item{
+// @for $i from 1 through 25 {
+//   .results__item{
 
-    &:nth-child(#{$i}) {
+//     &:nth-child(#{$i}) {
       
-      // Delay the animation. Delay increases as items loop.
-      animation-delay: $i * (.9s / 8);
-    }
-  }
-}
+//       // Delay the animation. Delay increases as items loop.
+//       animation-delay: $i * (.9s / 8);
+//     }
+//   }
+// }
