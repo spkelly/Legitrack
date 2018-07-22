@@ -42,10 +42,12 @@ class Results extends Component{
   render(){
     return(
       <div className="results">
-        <div className="u-center-text">
+        <div className="u-center-text u-margin-bottom-md">
           <Search cb={this.props.fetchSearch} />
         </div>
-        {this.props.isFetching?  <div className="grid_spinner"><GridLoader  color={'#fff'} size={30} /> </div>: this.renderResults() }
+        <div className="results__container">
+          {this.props.isFetching?  <div className="grid_spinner"><GridLoader  color={'#fff'} size={30} /> </div>: this.renderResults() }
+        </div>
       </div>
     )
   }
