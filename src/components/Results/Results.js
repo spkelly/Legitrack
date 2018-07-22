@@ -30,7 +30,7 @@ class Results extends Component{
         // TODO: filter out summary key from resutls list on backend
         if(key!='summary'){
         return(
-          <div className="results__item box" key={index}>
+          <div className="results__item results__box" key={index}>
             <Link className="results__link" to={`/bill/${results[key].bill_id}`} >{results[key].title}</Link>
           </div>
         )
