@@ -20,14 +20,6 @@ export default function ({vote}){
       
       />
       <div className="vote__desc">
-        <div className="vote__breakdown">
-          <ul>
-            <li>yay: {vote.data[0]}</li>
-            <li>nay: {vote.data[1]}</li>
-            <li>pass:{vote.data[2]} </li>
-            <li>nv:  {vote.data[3]}</li>
-          </ul>
-        </div>
         <h2 className="heading__tertiary">{vote.desc}</h2>
       </div> 
       
