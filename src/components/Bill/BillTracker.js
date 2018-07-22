@@ -7,7 +7,7 @@ class BillTracker extends Component {
     return(
       <div className="bill__tracker">
         <h2 className="heading__secondary">Bill Tracking</h2>
-        <ul className="tracking__list">
+        <ul className="tracking__list bill__box">
           <li >Bill ID: 12345</li>
           <li >Current Progress: Passed</li>
           <li >Last Event: Govenor Signed</li>

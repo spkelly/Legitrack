@@ -23,9 +23,9 @@ export default class VoteContainer extends Component{
 
   render(){
     return(
-      <div className="vote__container">
+      <div className="vote__container ">
       <h2 className="heading__secondary">Current Votes</h2>
-        <div className="u-flex-container">
+        <div className="u-flex-container bill__box ">
           <VoteList  cb={this.changeVote} votes={this.props.votes} selected={this.state.voteIndex} />
           <VoteChart vote={this.state.currenVote} />
         </div>
