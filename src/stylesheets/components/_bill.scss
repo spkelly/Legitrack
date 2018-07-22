@@ -1,8 +1,10 @@
 .bill{
   background-color: $color-white;
+  min-height: 1000px;
 }
 
 .bill__details{
+  min-height: 1000px;
   box-shadow: 0 -4px 6px 2px rgba(black, .2);
   padding: 2rem 1rem;
   display: grid;
