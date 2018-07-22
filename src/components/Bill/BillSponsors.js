@@ -8,7 +8,6 @@ export default function({sponsors}){
         <div className="bill__sponsor" key={index}>
           <img className="sponsor__image"></img>
           <p className="paragraph">{sponsor.name}</p>
-          <p>{sponsor.votesmart_id}</p>
         </div>
       )
     });
