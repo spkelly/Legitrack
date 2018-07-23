@@ -1,4 +1,4 @@
-.box{
+.results__box{
   background-color: #333;
   border-radius: 10px;
   padding: 2rem;
@@ -8,3 +8,9 @@
   }
 }
 
+.bill__box{
+  background-color: $color-grey-light;
+  border: 1px solid $color-grey-dark;
+  border-radius: 10px;
+  padding: 2rem;
+}
