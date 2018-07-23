@@ -19,7 +19,6 @@ export default function({sponsors}){
       <div className="u-flex-container bill__box">
       { sponsors? renderSponsers():' no sponsors found'}
       </div>
-     
     </div>
   )
 }
