@@ -40,15 +40,19 @@
 .bill__sponsor{
   padding-left: 1rem;
   padding-bottom: 1rem;
-
+  
 
   .sponsor__image{
+
     display: block;
     height: 10rem;
     width: 10rem;
     margin: 0 auto;
     border-radius: 1rem;
-    background-color:#777;
+    background: url('../images/user-solid.svg');
+    background-size: 100%;
+    background-clip: content-box;
+    background-repeat: no-repeat;
   }
 }
 

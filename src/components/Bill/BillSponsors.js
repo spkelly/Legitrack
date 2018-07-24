@@ -6,7 +6,7 @@ export default function({sponsors}){
     return sponsors.map((sponsor, index)=>{
       return(
         <div className="bill__sponsor" key={index}>
-          <img className="sponsor__image"></img>
+          <div className="sponsor__image"></div>
           <p className="paragraph">{sponsor.name}</p>
         </div>
       )
