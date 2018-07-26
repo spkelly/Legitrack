@@ -9,7 +9,7 @@ import { UV_UDP_REUSEADDR } from 'constants';
 const store = createStore(
   reducers, 
   undefined, 
-  applyMiddleware(promise,thunk, logger)
+  applyMiddleware(promise,thunk)
 );
 
 
