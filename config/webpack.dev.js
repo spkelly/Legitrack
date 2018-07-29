@@ -1,14 +1,11 @@
 const common = require('./webpack.common');
 const merge = require('webpack-merge');
+const parts = require('./webpack.parts');
 
 
 
 const devConfig = {
-  devServer: {
-    historyApiFallback: true,
-    port:8080,
-    compress: true
-  },
+  stats:{chunks: true}
 }
 
-module.exports = devConfig;
+module.exports = merge(devConfig,parts.server)
