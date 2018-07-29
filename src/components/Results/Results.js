@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import queyrString from 'query-string';
-import _ from 'lodash';
+import _ from 'lodash/core';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 import Search from '../search';
-import {GridLoader} from 'react-spinners';
+import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 
 //TODO: seperate into container 
 class Results extends Component{

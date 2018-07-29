@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
-import {GridLoader} from 'react-spinners';
+import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 
 import Bill from '../Bill/Bill';
 
