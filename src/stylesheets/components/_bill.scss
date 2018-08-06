@@ -38,9 +38,15 @@
 }
 
 .bill__sponsor{
-  padding-left: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   
+  &-rep{
+    background-color:#ee5253;
+  }
+
+  &-dem{
+    background-color: #2e86de;
+  }
 
   .sponsor__image{
 
@@ -74,7 +80,8 @@
 
 .vote__list{
   
-  border-right: 2px solid #888;
+  border-right: 2px solid $color-grey-dark;
+  overflow: hidden;
 }
 .vote__chart{
   width: 50%;
