@@ -13,4 +13,9 @@
   border: 1px solid $color-grey-dark;
   border-radius: 10px;
   padding: 2rem;
+  overflow: hidden;
+
+  &-votes{
+    padding: 0;
+  }
 }
