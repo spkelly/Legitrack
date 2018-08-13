@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 
 
 class BillTracker extends Component {
+  constructor(props){
+    super();  
+  }
+
   render(){
     return(
       <div className="bill__tracker">
