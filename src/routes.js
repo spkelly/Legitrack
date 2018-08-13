@@ -1,9 +1,7 @@
-import { Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import React from 'react';
 
 import Home from './components/Home/Home';
-import Bill from './components/Bill/Bill';
-
 import BillContainer from './components/Containers/BillContainer';
 import Results from './components/Results/Results';
 import Header from './components/Header/Header';
