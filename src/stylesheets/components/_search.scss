@@ -1,20 +1,27 @@
 .search{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
   &__label{
     font-size: 3.6rem;
   }
 
   &__input{
-    font-sizE: 3.6rem;
+    width: 500px;
+    max-height: 52px;
+    font-size: 3.6rem;
+    vertical-align: start;
     border: 1px solid #777;
     border-top-left-radius: .5rem;
     border-bottom-left-radius: .5rem;
 
     @include respond(phone){
-      border-radius: .5rem;
+      width: 72vw;
     }
   }
 
   &__submit{
+    max-height: 52px;
     font-size: 3.6rem;
     padding: 0 .5rem;
     border: 1px solid #777;
@@ -22,12 +29,13 @@
     border-image-outset: 0px;
     border-top-right-radius: .5rem;
     border-bottom-right-radius: .5rem;
+
     @include respond(phone){
-      border-radius: .5rem;
     }
   }
 
   &__err{
+    align-self: stretch;
     padding: 1rem;
     font-size: 1.6rem;
     color: $color-white;
@@ -35,6 +43,18 @@
     background-color:  $color-err;
     width: 20%;
     margin: 2rem auto;
+  }
+
+
+  &__icon{
+
+    background-image:url('../images/search.svg');
+    height: 50px;
+    width: 50px;
+    background-repeat:no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    vertical-align: baseline;
   }
 
   

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+//TODO: fix spacing of items in this component
 
 
 class Search extends Component {
@@ -37,7 +37,9 @@ class Search extends Component {
     return (
       <form className="search">
         <input className="search__input" value={this.state.input} onChange={this.handleChange}/>
-        <button className="search__submit" onClick={this.handleClick}>Search</button>
+        <button className="search__submit" onClick={this.handleClick}>
+          <div className="search__icon"></div>
+        </button>
         {this.state.err?<div className="search__err">INVALID SEARCH TERM</div>:""}
       </form>
     )
