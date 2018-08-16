@@ -6,6 +6,12 @@
   &__input{
     font-sizE: 3.6rem;
     border: 1px solid #777;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+
+    @include respond(phone){
+      border-radius: .5rem;
+    }
   }
 
   &__submit{
@@ -14,6 +20,11 @@
     border: 1px solid #777;
     border-image-slice: 100%;
     border-image-outset: 0px;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    @include respond(phone){
+      border-radius: .5rem;
+    }
   }
 
   &__err{
@@ -25,4 +36,6 @@
     width: 20%;
     margin: 2rem auto;
   }
+
+  
 }
