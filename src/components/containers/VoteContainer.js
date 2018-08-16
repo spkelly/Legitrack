@@ -16,10 +16,7 @@ export default class VoteContainer extends Component{
   }
 
   changeVote(voteIndex){
-    
-    
     this.setState({currenVote:this.props.votes[voteIndex], voteIndex});
-    console.log("i have been cliked the current vote is", voteIndex)
   }
 
   render(){
