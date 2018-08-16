@@ -3,9 +3,9 @@ import React from 'react';
 
 import Home from './components/Home/Home';
 import BillContainer from './components/Containers/BillContainer';
-import Results from './components/Results/Results';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Results from './components/Results';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const Routes = (props) => {
 	return(

@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 import queyrString from 'query-string';
 import _ from 'lodash/core';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from '../actions';
 
-import Search from '../search';
+import Search from './search';
 import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 
 //TODO: seperate into container 
@@ -27,7 +27,6 @@ class Results extends Component{
       let results = this.props.searchResults;
 
       return Object.keys(results).map((key,index)=>{
-        // TODO: filter out summary key from resutls list on backend
         if(key!='summary'){
         return(
           <div className="results__item results__box" key={index}>

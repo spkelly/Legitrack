@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-
-import Header from '../Header/Header';
 import Promo from './Promo';
 import Search from '../search';
 import About from './About';
