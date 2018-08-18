@@ -1,4 +1,4 @@
-import { FETCH_SEARCH, REQUEST_SEARCH, RECEIVED_SEARCH } from '../actions/types';
+import { REQUEST_SEARCH, RECEIVED_SEARCH } from '../actions/types';
 
 
 export default function (state={}, action){
