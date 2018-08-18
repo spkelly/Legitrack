@@ -16,7 +16,7 @@ class Results extends Component{
   }
 
   componentDidMount(){
-    let query = queyrString.parse(this.props.location.search).q
+    let query = queyrString.parse(this.props.location.search).q;
     if(_.isEmpty(this.props.searchResults)){
       if(query) this.props.fetchSearch(query);
     }
@@ -32,8 +32,8 @@ class Results extends Component{
           <div className="results__item results__box" key={index}>
             <Link className="results__link" to={`/bill/${results[key].bill_id}`} >{results[key].title}</Link>
           </div>
-        )
-      }
+        );
+	}
       });
     }
   }
@@ -48,7 +48,7 @@ class Results extends Component{
           {this.props.isFetching?  <div className="grid_spinner"><GridLoader  color={'#fff'} size={30} /> </div>: this.renderResults() }
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -56,7 +56,7 @@ function mapStateToProps(state){
   return{
     searchResults: state.searchResults.items,
     isFetching: state.searchResults.isFetching
-  }
+  };
 };  
 
 
