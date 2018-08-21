@@ -4,6 +4,7 @@ import queyrString from 'query-string';
 import _ from 'lodash/core';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import he from 'he';
 
 import Search from './search';
 import GridLoader from 'react-spinners/dist/spinners/GridLoader';
@@ -30,7 +31,7 @@ class Results extends Component{
         if(key!='summary'){
         return(
           <div className="results__item results__box" key={index}>
-            <Link className="results__link" to={`/bill/${results[key].bill_id}`} >{results[key].title}</Link>
+            <Link className="results__link" to={`/bill/${results[key].bill_id}`}>{he.decode(results[key].title)}</Link>
           </div>
         );
 	}
