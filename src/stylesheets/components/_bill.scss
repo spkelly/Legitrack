@@ -1,10 +1,10 @@
 .bill{
-  background-color: $color-white;
+  background-color: $color-grey-light;
 }
 
 .bill__details{
   min-height: 900px;
-  box-shadow: 0 -4px 6px 2px rgba(black, .2);
+  // box-shadow: 0 -4px 6px 2px rgba(black, .2);
   padding: 2rem 1rem;
   display: grid;
   grid-template-rows:max-content max-content;
