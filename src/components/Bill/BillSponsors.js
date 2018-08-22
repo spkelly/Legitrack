@@ -17,7 +17,7 @@ export default function({sponsors}){
   return (
     <div className="bill__sponsors">
       <h2 className="heading__secondary">Sponsors</h2>
-      <div className=" bill__box">
+      <div className="bill__box bill__box-nop">
       { sponsors? renderSponsers():'no sponsors found'}
       </div>
     </div>
