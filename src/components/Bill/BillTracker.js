@@ -7,15 +7,17 @@ class BillTracker extends Component {
     super();  
   }
 
+
+// TODO: Render status in a way other then a number
   render(){
     return(
       <div className="bill__tracker">
         <h2 className="heading__secondary">Bill Tracking</h2>
         <ul className="tracking__list bill__box">
-          <li >Bill ID: 12345</li>
-          <li >Current Progress: Passed</li>
-          <li >Last Event: Govenor Signed</li>
-          <li >Last Updated:  7/6/2018 10:00am</li>
+          <li >Bill ID: {this.props.stats.id}</li>
+          <li >Current Progress: {this.props.stats.status}</li>
+          <li >Last Event: {this.props.lastAction}</li>
+          <li >Last Updated:  {this.props.lastUpdated}</li>
         </ul>
       </div>
     )
