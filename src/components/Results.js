@@ -22,7 +22,7 @@ class Results extends Component{
       if(query) this.props.fetchSearch(query);
     }
   }
-
+  // TODO: find a better way to decode the title here (maybe on backend)
   renderResults(){
     if(!_.isEmpty(this.props.searchResults)){
       let results = this.props.searchResults;
