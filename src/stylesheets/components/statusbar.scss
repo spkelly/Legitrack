@@ -11,12 +11,23 @@
   height: 20px;
   background-color: $color-grey-dark;
   border-radius: .5rem; 
+  background-color: #39ca74;
 
 // Intro, Engross, Enroll, Pass, Veto
-  &-engrossed{
-
+  &-Introduced{
+    width: 25%;
   }
-  &-signed{
-
+  &-Engrossed{
+    width: 50%;
+  }
+  &-Enrolled{
+    width: 75%;
+  }
+  &-Passed{
+    width: 100%;
+  }
+  &-Vetoed{
+    width: 100%;
+    background-color: red;
   }
 }

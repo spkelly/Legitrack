@@ -16,7 +16,7 @@ class BillTracker extends Component {
         <ul className="tracking__list bill__box">
           <li >Bill ID: {this.props.stats.id}</li>
           <li >Current Progress: {this.props.stats.status}
-          <StatusBar />
+          <StatusBar progress={this.props.stats.status}/>
           </li>
           <li >Last Event: {this.props.lastAction}</li>
           <li >Last Updated:  {this.props.lastUpdated}</li>
