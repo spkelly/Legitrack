@@ -1,12 +1,11 @@
 .results{
-  background-color: $primary-color;
+  background-color: $color-grey-light;
   display: flex;
   flex-direction: column;
   min-height: 90vh;
 
   &__container{
     max-width: 1200px;
-    margin: 0 auto;
   }
 
   &__header{

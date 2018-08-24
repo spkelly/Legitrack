@@ -42,7 +42,7 @@ class Results extends Component{
   render(){
     return(
       <div className="results">
-        <div className="u-center-text u-margin-bottom-md">
+        <div className="u-center-text u-tb-margin-md">
           <Search cb={this.props.fetchSearch} />
         </div>
         <div className="results__container">
