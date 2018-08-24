@@ -1,0 +1,22 @@
+.status__container{
+  height: 40px;
+  padding: 10px;
+  background-color: $color-white;
+  border: 1px solid $color-grey-dark;
+  box-shadow: inset 0px 1px 10px rgba(black, .5);
+  border-radius: 1rem;
+}
+
+.status__bar{
+  height: 20px;
+  background-color: $color-grey-dark;
+  border-radius: .5rem; 
+
+// Intro, Engross, Enroll, Pass, Veto
+  &-engrossed{
+
+  }
+  &-signed{
+
+  }
+}
