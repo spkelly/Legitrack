@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import StatusBar from '../StatusBar';
 
 
 class BillTracker extends Component {
@@ -15,7 +15,9 @@ class BillTracker extends Component {
         <h2 className="heading__secondary">Bill Tracking</h2>
         <ul className="tracking__list bill__box">
           <li >Bill ID: {this.props.stats.id}</li>
-          <li >Current Progress: {this.props.stats.status}</li>
+          <li >Current Progress: {this.props.stats.status}
+          <StatusBar />
+          </li>
           <li >Last Event: {this.props.lastAction}</li>
           <li >Last Updated:  {this.props.lastUpdated}</li>
         </ul>
