@@ -26,8 +26,13 @@
   &-Passed{
     width: 100%;
   }
-  &-Vetoed{
+  &-Vetoed, &-Failed{
     width: 100%;
     background-color: red;
   }
+  &-Unavailable{
+    width: 100%;
+    background-color: $color-grey-dark;
+  }
+
 }
