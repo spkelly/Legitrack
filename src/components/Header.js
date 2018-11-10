@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-
-export default class Header extends Component{
-  render(){
-    return(
-      <header className="header">
-        <a href="/" className="header__logo">
-          Legitrack
-        </a>
-      </header>
-    );
-  }
+const Header = function(){
+  return (
+    <header className="header">
+      <a href="/" className="header__logo">
+        Legitrack
+      </a>
+    </header>
+  )
 }
+
+export default Header;

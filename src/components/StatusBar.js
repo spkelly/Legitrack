@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-export default class StatusBar extends Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-    return(
-      <div className="status__container">
-        <div className={`status__bar status__bar-${this.props.progress}`}>
-        </div>
+const StatusBar = function({progress}){
+  return(
+    <div className="status__container">
+      <div className={`status__bar status__bar-${progress}`}>
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default StatusBar;
