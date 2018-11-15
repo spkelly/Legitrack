@@ -1,29 +1,24 @@
 import React, {Component} from 'react';
 import StatusBar from '../StatusBar';
 
+const BillTracker = function(props){
 
-class BillTracker extends Component {
-  constructor(props){
-    super();  
-  }
+  const { lastAction, lastUpdated } = props;
+  const { id, status } = props.stats;
 
-
-// TODO: Render status in a way other then a number
-  render(){
-    return(
-      <div className="bill__tracker">
-        <h2 className="heading__secondary">Bill Tracking</h2>
-        <ul className="tracking__list bill__box">
-          <li >Bill ID: {this.props.stats.id}</li>
-          <li >Current Progress: {this.props.stats.status}
-          <StatusBar progress={this.props.stats.status}/>
-          </li>
-          <li >Last Event: {this.props.lastAction}</li>
-          <li >Last Updated:  {this.props.lastUpdated}</li>
-        </ul>
-      </div>
-    )
-  }
+  return(
+    <div className="bill__tracker">
+      <h2 className="heading__secondary">Bill Tracking</h2>
+      <ul className="tracking__list bill__box">
+        <li >Bill ID: {id}</li>
+        <li >Current Progress: {status}
+        <StatusBar progress={status}/>
+        </li>
+        <li >Last Action: {lastAction}</li>
+        <li >Last Updated:  {lastUpdated}</li>
+      </ul>
+    </div>
+  )
 }
 
 

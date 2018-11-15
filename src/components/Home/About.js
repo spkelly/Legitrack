@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function (props){
+export default function (){
   return(
     <div className="about">
       <h1 className="heading__primary u-margin-bottom-lg">About</h1>

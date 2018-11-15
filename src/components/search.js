@@ -1,29 +1,28 @@
 import React, {Component} from 'react';
-//TODO: fix spacing of items in this component
+
 
 
 class Search extends Component {
   constructor(props){
     super(props);
-    this.state = {input:"",err:false}
+    this.state = {input:'',err:false}
 
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  // check to see if the inputs length is larger then three
   // TODO: (Sean) Add more input validation
   validateInput(input){
-    if (input.length > 3 ){
-      return true
-    }
-    return false
+    return input.length > 3 &&
+           input.length < 10;
   }
 
   handleClick(e){
+    let {input} = this.state;
     e.preventDefault();
-    if(this.validateInput(this.state.input)){
-      this.props.cb(this.state.input);
-      this.setState({input:'',err:false});
+
+    if(this.validateInput(input)){
+      this.props.cb(input);
+      this.setState({input:'', err:false});
     }
     else{
       this.setState({err:true});

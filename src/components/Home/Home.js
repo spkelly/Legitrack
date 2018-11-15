@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Promo from './Promo';
-import Search from '../search';
+import Search from '../Search';
 import About from './About';
 
 class Home extends Component{

@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 
 
-class Promo extends Component{
-  render(){
-    return(
-      <div className="home__promo">
-        {this.props.children}
-      </div>
-    )
-  }
+const Promo = function({children}){
+  return (
+          <div className="home__promo">
+            {children}
+          </div>
+        )
 }
 
 export default Promo;

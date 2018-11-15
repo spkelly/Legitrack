@@ -26,7 +26,6 @@ class BillContainer extends Component {
     }
   }
 
-
   render(){
     return (
       <div className="bill__wrapper"> 

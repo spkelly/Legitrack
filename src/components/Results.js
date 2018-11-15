@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import he from 'he';
 
-import Search from './search';
+import Search from './Search';
 import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 
 //TODO: seperate into container 
@@ -27,26 +27,32 @@ class Results extends Component{
     if(!_.isEmpty(this.props.searchResults)){
       let results = this.props.searchResults;
 
-      return Object.keys(results).map((key,index)=>{
-        if(key!='summary'){
-        return(
-          <div className="results__item results__box" key={index}>
-            <Link className="results__link" to={`/bill/${results[key].bill_id}`}>{he.decode(results[key].title)}</Link>
-          </div>
-        );
-	}
+      return Object.keys(results).map((bill,index)=>{
+        if(bill != 'summary'){
+          return(
+            <div className="results__item results__box" key={index}>
+              <Link className="results__link" to={`/bill/${results[bill].bill_id}`}>{he.decode(results[bill].title)}</Link>
+            </div>
+          );
+	      }
       });
     }
   }
 
   render(){
+    let results = this.props.isFetching? 
+        <div className="grid_spinner placeholder">
+          <GridLoader  color={'#fff'} size={30} />
+        </div>:
+        this.renderResults();
+
     return(
       <div className="results">
         <div className="u-center-text u-tb-margin-md">
           <Search cb={this.props.fetchSearch} />
         </div>
         <div className="results__container">
-          {this.props.isFetching?  <div className="grid_spinner"><GridLoader  color={'#fff'} size={30} /> </div>: this.renderResults() }
+          {results}
         </div>
       </div>
     );
