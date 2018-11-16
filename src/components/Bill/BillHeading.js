@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function({ title, number }){
+export default function({ title }){
   return(
     <div className="bill__heading">
       <h1 className="heading__primary">

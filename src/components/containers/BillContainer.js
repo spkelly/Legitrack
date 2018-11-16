@@ -11,7 +11,6 @@ class BillContainer extends Component {
 
 
   componentWillMount(){
-      console.log('here')
       this.props.fetchBill(this.props.match.params.id);
   }
 

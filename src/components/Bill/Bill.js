@@ -8,14 +8,13 @@ import VoteContainer from '../Containers/VoteContainer';
 
 // TODO: Get Last updated date and event from search page
 
-const Bill = function({currentBill}){
+const Bill = function({ currentBill }){
   const { title, stats,
           number,
           description,
           sponsors,
           votes
         } = currentBill;
-
 
   return(
     <div className="bill">
