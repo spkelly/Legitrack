@@ -7,7 +7,7 @@
     "watch:dev": "webpack-dev-server --env development",
     "build:dev": "webpack  --env development",
     "build:prod": "webpack --env production",
-    "test": "jest --watch"
+    "test": "mocha --require babel-core/register ./src/**/test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.2.0",
     "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.11",
     "enzyme": "^3.7.0",
@@ -51,6 +52,7 @@
     "redux-thunk": "^2.3.0",
     "sass": "^1.5.1",
     "sass-loader": "^7.0.3",
+    "sinon": "^7.1.1",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack-bundle-analyzer": "^2.13.1",
