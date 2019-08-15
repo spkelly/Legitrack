@@ -1,7 +1,5 @@
 .results{
   background-color: $color-grey-light;
-  display: flex;
-  flex-direction: column;
   min-height: 90vh;
 
   &__container{
@@ -15,8 +13,7 @@
   }
 
   &__item{
-    font-size: 2.4rem;
-    padding: 1.2rem .5rem;
+    font-size: 1.6rem;
 
     // animation: pulse ease-in 1s forwards;
     transition: all ease 150ms;
@@ -39,6 +36,10 @@
     transition: all ease 150ms;
 
   }
+}
+
+.result__header{
+  // border-bottom: 1px solid #dedede;
 }
 
 .grid_spinner{

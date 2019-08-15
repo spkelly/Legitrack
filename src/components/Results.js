@@ -31,7 +31,9 @@ class Results extends Component{
         if(bill != 'summary'){
           return(
             <div className="results__item results__box" key={index}>
-              <Link className="results__link" to={`/bill/${results[bill].bill_id}`}>{he.decode(results[bill].title)}</Link>
+              <div className='result__header'>
+                <Link className="results__link" to={`/bill/${results[bill].bill_id}`}>{he.decode(results[bill].title)}</Link>
+              </div>
             </div>
           );
 	      }
