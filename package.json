@@ -7,7 +7,7 @@
     "watch:dev": "webpack-dev-server --env development",
     "build:dev": "webpack  --env development",
     "build:prod": "webpack --env production",
-    "test": "mocha --require babel-core/register ./src/**/test/*.test.js"
+    "test": "mocha --opts ./mocha.opts ./src/**/test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.2.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.12.0",
     "path": "^0.12.7",
     "query-string": "^6.1.0",
     "redux-logger": "^3.0.6",
