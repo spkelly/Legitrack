@@ -25,10 +25,17 @@ class BillContainer extends Component {
     }
   }
 
+  renderPlaceholder(){
+    return (
+    <div className="bill__placeholder">
+      <GridLoader color={'#c0392b'} size={20}/>
+    </div>);
+  }
+
   render(){
     return (
       <div className="bill__wrapper"> 
-        {this.props.isFetching? <GridLoader /> : this.renderBill()}
+        {this.props.isFetching? this.renderPlaceholder() : this.renderBill()}
       </div>
     );
   }
