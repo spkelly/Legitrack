@@ -8,6 +8,6 @@ const Footer = function(){
     </h2>
   </footer>
   );
-}
+};
 
 export default Footer;

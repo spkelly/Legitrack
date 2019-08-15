@@ -1,7 +1,7 @@
 const HTMLWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const webpack = require("webpack");
+const webpack = require('webpack');
 const path = require('path');
 
 
@@ -36,7 +36,7 @@ const commonConfig = {
       {
         test: /\.(jpg|png|svg)$/,
         use: {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
             limit: 25000,
           }
@@ -54,6 +54,6 @@ const commonConfig = {
       new BundleAnalyzerPlugin(),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ]
-}
+};
 
 module.exports = commonConfig;

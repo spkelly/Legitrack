@@ -42,7 +42,7 @@ class Results extends Component{
   render(){
     let results = this.props.isFetching? 
         <div className="grid_spinner placeholder">
-          <GridLoader  color={'#fff'} size={30} />
+          <GridLoader color={'#fff'} size={30} />
         </div>:
         this.renderResults();
 

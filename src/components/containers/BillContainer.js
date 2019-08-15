@@ -21,7 +21,7 @@ class BillContainer extends Component {
           goBack={this.props.history.goBack} 
           currentBill={this.props.currentBill}
         />
-      )
+      );
     }
   }
 
@@ -39,7 +39,7 @@ function mapStateToProps(state){
     currentBill: state.currentBill.content,
     id: state.currentBill.id,
     isFetching: state.currentBill.isFetching
-  }
+  };
 };  
 
 

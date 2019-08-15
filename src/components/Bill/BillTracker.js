@@ -15,11 +15,11 @@ const BillTracker = function(props){
         <StatusBar progress={status}/>
         </li>
         <li >Last Action: {lastAction}</li>
-        <li >Last Updated:  {lastUpdated}</li>
+        <li >Last Updated: {lastUpdated}</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 
 export default BillTracker;

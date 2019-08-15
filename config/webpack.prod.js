@@ -20,12 +20,12 @@ const prodConfig = {
   },
   optimization:{
     splitChunks:{
-      chunks:"initial"
+      chunks:'initial'
     },
     minimizer: [
       new UglifyJsPlugin()
     ]
   },
-}
+};
 
 module.exports = prodConfig;

@@ -17,7 +17,7 @@ const Routes = (props) => {
 	<Footer />
       </div>
   );
-}
+};
 
 
 export default Routes;

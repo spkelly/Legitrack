@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 class Search extends Component {
   constructor(props){
     super(props);
-    this.state = {input:'',err:false}
+    this.state = {input:'',err:false};
 
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -39,9 +39,9 @@ class Search extends Component {
         <button className="search__submit" onClick={this.handleClick}>
           <div className="search__icon"></div>
         </button>
-        {this.state.err?<div className="search__err">INVALID SEARCH TERM</div>:""}
+        {this.state.err?<div className="search__err">INVALID SEARCH TERM</div>:''}
       </form>
-    )
+    );
   }
 }
 

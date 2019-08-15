@@ -7,7 +7,7 @@ const StatusBar = function({progress}){
       <div className={`status__bar status__bar-${progress}`}>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default StatusBar;

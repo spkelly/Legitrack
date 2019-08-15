@@ -7,7 +7,7 @@ const Header = function(){
         Legitrack
       </a>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

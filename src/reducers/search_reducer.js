@@ -13,7 +13,7 @@ export default function (state={}, action){
         isFetching: false,
         items: action.payload.data,
         query: action.payload.query
-      })
+      });
     default:
       return state;
   }

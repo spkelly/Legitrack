@@ -20,16 +20,16 @@ const Bill = function({ currentBill }){
     <div className="bill">
     <BillHeading title={title} number={number} />
     <div className="bill__details">
-      <BillTracker  stats={stats} 
-                    lastAction={"Govenor Signed"} 
-                    lastUpdated={"last Updated placeholder"} />
+      <BillTracker stats={stats} 
+                   lastAction={'Govenor Signed'} 
+                   lastUpdated={'last Updated placeholder'} />
       <BillDescription text={description} />
       <BillSponsors sponsors={sponsors} />
       <VoteContainer votes={votes} />
     </div>
   </div>
-  )
-}
+  );
+};
 
-export default Bill
+export default Bill;
 

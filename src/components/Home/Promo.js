@@ -6,7 +6,7 @@ const Promo = function({children}){
           <div className="home__promo">
             {children}
           </div>
-        )
-}
+        );
+};
 
 export default Promo;

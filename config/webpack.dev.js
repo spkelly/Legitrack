@@ -6,6 +6,6 @@ const parts = require('./webpack.parts');
 
 const devConfig = {
   stats:{chunks: true}
-}
+};
 
-module.exports = merge(devConfig,parts.server)
+module.exports = merge(devConfig,parts.server);

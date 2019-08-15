@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {Pie} from 'react-chartjs-2';
 
 export default function ({vote}){
@@ -6,11 +6,11 @@ export default function ({vote}){
     <div className="vote__chart">
       <Pie
         data={
-          {labels: ["Yay", "Nay", "NV", "Pass"],
+          {labels: ['Yay', 'Nay', 'NV', 'Pass'],
           datasets:[{
             label: vote.desc,
             data:vote.data,
-            backgroundColor: ['#2ecc71','#e74c3c','#f1c40f',"#95a5a6"]
+            backgroundColor: ['#2ecc71','#e74c3c','#f1c40f','#95a5a6']
             }]
           } 
         }
@@ -19,5 +19,5 @@ export default function ({vote}){
         <h2 className="heading__tertiary">{vote.desc}</h2>
       </div> 
     </div>
-  )
+  );
 }

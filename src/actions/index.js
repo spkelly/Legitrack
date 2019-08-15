@@ -12,7 +12,7 @@ import {
 //TODO: Reorder functions in file
 //TODO: Write new fetchBill function
 const TEST_URL = 'http://localhost:3000/bill/1053030';
-const ROOT_URL = 'http://legitrack-api.herokuapp.com'
+const ROOT_URL = 'http://legitrack-api.herokuapp.com';
 
 export function fetchTest(){
   const testBill = axios.get(TEST_URL);
@@ -36,7 +36,7 @@ export function requestBill(id){
   return{
     type:REQUEST_BILL,
     id
-  }
+  };
 } 
 
 export const recieveBill = (id, payload) => {
@@ -44,15 +44,15 @@ export const recieveBill = (id, payload) => {
     type:RECIEVE_BILL,
     payload,
     id
-  }
-}
+  };
+};
 
 export const requestSearch = (query) => {
   return{
     type:REQUEST_SEARCH,
     query
-  }
-}
+  };
+};
 
 export const recieveSearch = (query, json)=>{
   return {
@@ -61,8 +61,8 @@ export const recieveSearch = (query, json)=>{
       query:query,
       data:json
     }
-  }
-}
+  };
+};
 
 
 
@@ -71,9 +71,9 @@ export function fetchSearch(query){
   return dispatch =>{
     dispatch(requestSearch(query));
     axios.get(`${ROOT_URL}/search?q=${query}`).then((response)=>{
-      dispatch(recieveSearch(query,response.data.results))
+      dispatch(recieveSearch(query,response.data.results));
     });
-  }
+  };
   
 }
 
@@ -81,7 +81,7 @@ export function fetchBill(id){
   return dispatch =>{
     dispatch(requestBill(id));
     axios.get(`${ROOT_URL}/bill/${id}`).then((response) =>{
-      dispatch(recieveBill(id, response))
+      dispatch(recieveBill(id, response));
     });
-  }
+  };
 }
