@@ -1,7 +1,12 @@
 import { REQUEST_SEARCH, RECEIVED_SEARCH } from '../actions/types';
 import * as _ from 'lodash/core';
 
-export default function (state={}, action){
+const defaultState = {
+  items:[]
+}
+
+
+export default function (state=defaultState, action){
   switch(action.type){
     case REQUEST_SEARCH:
       return Object.assign({},state,{
