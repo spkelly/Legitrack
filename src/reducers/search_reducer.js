@@ -2,8 +2,10 @@ import { REQUEST_SEARCH, RECEIVED_SEARCH } from '../actions/types';
 import * as _ from 'lodash/core';
 
 const defaultState = {
-  items:[]
-}
+  items:[], 
+  isFetching: false,
+  query:''
+};
 
 
 export default function (state=defaultState, action){
