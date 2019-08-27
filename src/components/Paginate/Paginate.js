@@ -22,16 +22,16 @@ class Paginate extends Component{
     let {currentPage,currentStartingIndex} = this.state;
 
     if(data){
-        let length = data.length;
-        let currentEndingIndex = currentStartingIndex + itemsPerPage;
+      let length = data.length;
+      let currentEndingIndex = currentStartingIndex + itemsPerPage;
 
-        this.setState({
-          totalResults: length,
-          pageCount: Math.ceil(length/itemsPerPage),
-          currentStartingIndex: currentPage * itemsPerPage - 1,
-          currentEndingIndex: currentEndingIndex,
-          currentDisplayedResults: data.slice(0,currentEndingIndex)
-        });
+      this.setState({
+        totalResults: length,
+        pageCount: Math.floor(length/itemsPerPage),
+        currentStartingIndex: currentPage * itemsPerPage - 1,
+        currentEndingIndex: currentEndingIndex,
+        currentDisplayedResults: data.slice(0,currentEndingIndex)
+      });
     }
   }
 
@@ -42,17 +42,15 @@ class Paginate extends Component{
     if(targetPage <= pageCount){
       let newStartingIndex = ((targetPage - 1)* itemsPerPage);
       let newEndingIndex = newStartingIndex + itemsPerPage;
-
+      
       if(newEndingIndex > data.length){
         newEndingIndex = data.length;
       }
       let nextResults = data.slice(newStartingIndex,newEndingIndex);
 
-
       this.setState({
         currentPage: targetPage,
         currentStartingIndex: newStartingIndex,
-        currentEndingIndex: newStartingIndex + itemsPerPage,
         currentEndingIndex: newEndingIndex,
         currentDisplayedResults: nextResults
       });
@@ -61,12 +59,12 @@ class Paginate extends Component{
 
   render(){
     return(
-    <div>
+    <div >
       {this.state.currentDisplayedResults}
       <PaginationBar 
-          currentPage={this.state.currentPage}
-          handleClick={this.handlePageChange}
-          pageCount={this.state.pageCount}
+        currentPage={this.state.currentPage}
+        handleClick={this.handlePageChange}
+        pageCount={this.state.pageCount}
       />
     </div>);
   }

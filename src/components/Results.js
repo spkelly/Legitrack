@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import queyrString from 'query-string';
 import _ from 'lodash/core';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
-import he from 'he';
 
+import * as actions from '../actions';
 import Search from './Search';
 import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 import ResultsItem from './ResultsItem';
@@ -23,18 +21,12 @@ class Results extends Component{
 
   componentDidMount(){
     let query = queyrString.parse(this.props.location.search).q;
-    if(!_.isEmpty(this.props.searchResults)){
-      console.log(this.props.searchResults.length);
-    }
-    else{
-      if(query) this.props.fetchSearch(query);
-    }
+    if(query) this.props.fetchSearch(query);
   }
  
 
   renderResults(){
     let results = this.props.searchResults;
-    console.log(this.props.searchResults);
     return results.map((bill,index)=>{
       if(!bill.page){
         return (
@@ -43,7 +35,7 @@ class Results extends Component{
             linkTitle={bill.title}
             endPoint={`/bill/${bill.bill_id}`}
           />
-        )
+        );
       }
     });
   }
@@ -58,11 +50,11 @@ class Results extends Component{
 
   render(){
     let results = this.props.isFetching? 
-        this.renderSpinner():
-        <Paginate 
-          data={this.renderResults()}
-          itemsPerPage={10} 
-        />;
+      this.renderSpinner():
+      <Paginate 
+        data={this.renderResults()}
+        itemsPerPage={8} 
+      />;
 
     return(
       <div className="results">

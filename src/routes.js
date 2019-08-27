@@ -11,9 +11,9 @@ const Routes = (props) => {
   return(
       <div>
 	<Header />
+	<Route exact path="/" component={ Home }></Route>
 	<Route path="/search" component={ Results }></Route>
 	<Route path="/bill/:id" component = { BillContainer }></Route>
-	<Route exact path="/" component={ Home }></Route>
 	<Footer />
       </div>
   );
