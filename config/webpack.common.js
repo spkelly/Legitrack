@@ -51,7 +51,6 @@ const commonConfig = {
         filename: '[name].css',
         chunkFilename:  '[id].css' ,
       }),
-      new BundleAnalyzerPlugin(),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ]
 };

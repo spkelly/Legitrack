@@ -4,10 +4,13 @@
   "description": "a redesign of legitrack with sass",
   "main": "index.js",
   "scripts": {
+    "start":"node server/index.js",
+    "heroku-postbuild": "webpack  --env development",
     "watch:dev": "webpack-dev-server --env development",
     "build:dev": "webpack  --env development",
     "build:prod": "webpack --env production",
-    "test": "mocha --opts ./mocha.opts ./src/**/test/*.test.js"
+    "test": "mocha --opts ./mocha.opts ./src/**/test/*.test.js",
+    "run:server":"node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,9 +18,14 @@
   },
   "author": "Sean Kelly",
   "license": "ISC",
+  "engines": {
+    "node": "12.3.1",
+    "npm": "6.11.2"
+  },
   "dependencies": {
     "axios": "^0.18.1",
     "chart.js": "^2.7.2",
+    "express": "^4.17.1",
     "he": "^1.1.1",
     "history": "^4.7.2",
     "npm": "^6.10.3",
