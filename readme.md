@@ -6,4 +6,4 @@ This application can currently search and view details on bills that are within 
 
 it lists bill sponsors and displays voter breakdowns using the Chart.js library. 
 
-[current running version can be viewed here](http://d2id9rew179k2d.cloudfront.net/)
+[current running version can be viewed here](https://rocky-headland-43504.herokuapp.com)
