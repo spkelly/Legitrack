@@ -4,13 +4,13 @@
   "description": "a redesign of legitrack with sass",
   "main": "index.js",
   "scripts": {
-    "start":"node server/index.js",
+    "start": "node server/index.js",
     "heroku-postbuild": "webpack  --env development",
     "watch:dev": "webpack-dev-server --env development",
     "build:dev": "webpack  --env development",
     "build:prod": "webpack --env production",
     "test": "mocha --opts ./mocha.opts ./src/**/test/*.test.js",
-    "run:server":"node server/index.js"
+    "run:server": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "react-spinners": "^0.3.2",
     "redux": "^4.0.0",
     "redux-promise": "^0.6.0",
+    "resolve-url-loader": "^3.1.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2"
   },

@@ -31,7 +31,7 @@ const commonConfig = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use:[ MiniCssExtractPlugin.loader,'css-loader','sass-loader']
+        use:[ MiniCssExtractPlugin.loader,'css-loader','resolve-url-loader','sass-loader']
       },
       {
         test: /\.(jpg|png|svg)$/,
