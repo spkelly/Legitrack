@@ -60,7 +60,9 @@ class Paginate extends Component{
   render(){
     return(
     <div >
+      <div className="results__holder">
       {this.state.currentDisplayedResults}
+      </div>
       <PaginationBar 
         currentPage={this.state.currentPage}
         handleClick={this.handlePageChange}
