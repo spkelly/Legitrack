@@ -1,5 +1,4 @@
 import React from 'react';
-
 import BillHeading from './BillHeading';
 import BillTracker from './BillTracker';
 import BillDescription from './BillDescription';

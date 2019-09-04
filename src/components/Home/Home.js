@@ -11,7 +11,6 @@ class Home extends Component{
   }
 
   performSearch(term){
-    console.log(this.props);
     this.props.history.push(`/search?q=${term}`);
   }
 

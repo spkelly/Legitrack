@@ -17,7 +17,9 @@ class Search extends Component {
   }
 
   handleClick(e){
+
     let {input} = this.state;
+    
     e.preventDefault();
 
     if(this.validateInput(input)){
