@@ -1,5 +1,11 @@
-import Reducer from '../index';
+import billReducer from '../bill_reducer';
+import searchReducer from '../search_reducer';
 
-test('test',()=>{
+describe('Reducers',()=>{
+  describe('Search Reducer',()=>{
 
+  });
+  describe('Bill Reducer',()=>{
+    
+  });
 });
