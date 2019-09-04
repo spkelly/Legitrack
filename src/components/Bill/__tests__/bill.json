@@ -1,0 +1,24 @@
+{
+  "title": "Fake Bill",
+  "stats":{
+    "id": 1234,
+    "status": "Govenor Signed"
+  },
+  "number": 1234,
+  "description":"this is a fake description" ,
+  "sponsors": [{
+    "name":"George Washingtion",
+    "party": "D"
+    },
+    {
+    "name": "John Adams",
+    "party": "R"
+    },
+    {
+      "name":"Benjamin Franklin",
+      "party": "I"
+    }],
+  "votes":[{
+    "desc": "hello"
+  }]
+}
