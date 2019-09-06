@@ -1,6 +1,12 @@
 import { REQUEST_BILL, RECIEVE_BILL } from '../actions/types';
 
-export default function(state={}, action){
+const initialState = {
+  bill:{},
+  id: null,
+  isFetching:false
+}
+
+export default function(state=initialState, action){
   switch(action.type){
     case REQUEST_BILL:
       return Object.assign({}, state, {id:action.id, isFetching:true});
