@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Bill from '../Bill';
-import testBill from './bill';
+import testBill from './mockBill';
 
 test('mounts',()=>{
   let container = document.createElement('div');

@@ -30,31 +30,33 @@ const mockBillSuccessResponse = (id)=> ({
 
 describe('simple action creators',()=>{
   describe('requestBill',()=>{
+
     test('it should return the proper action type and payload', ()=>{
       let expectedAction = {
         type: 'request_bill',
-        payload: '6'
+        payload: {
+          id: '6'
+        }
       };
       let returnedAction = actions.requestBill('6');
-      expect(returnedAction).toBe(expectedAction);
+      expect(returnedAction).toEqual(expectedAction);
     });
+
   });
 
   describe('recieveBill',()=>{
     test('it should return the proper action type and payload', ()=>{
-      let testBill = {};
+      
       let expectedAction = {
         type: 'recieve_bill',
         payload:{
           id: '6',
-          bill:{
-            // ...
-          }
+          bill:mockBill
         }
       };
 
-      let returnedAction = actions.recieveBill('6', testBill);
-      expect(returnedAction).toBe(expectedAction);
+      let returnedAction = actions.recieveBill('6', {bill:mockBill});
+      expect(returnedAction).toEqual(expectedAction);
     });
   });
 
@@ -62,11 +64,13 @@ describe('simple action creators',()=>{
     test('it should return the proper action type and payload', ()=>{
       let expectedAction = {
         type: 'request_search',
-        payload: 'term'
+        payload: {
+          query:'term'
+        }
       };
 
       let returnedAction = actions.requestSearch('term');
-      expect(returnedAction).toBe(expectedAction);
+      expect(returnedAction).toEqual(expectedAction);
     });
   });
 
@@ -101,7 +105,12 @@ describe('asynchronous actions', ()=>{
     });
 
     let expectedActions = [
-      {type:types.REQUEST_SEARCH,payload:{query:'test'}},
+      {
+        type:types.REQUEST_SEARCH,
+        payload:{
+          query:'test'
+        }
+      },
       {
         type:types.RECEIVED_SEARCH,
         payload: {
@@ -121,11 +130,16 @@ describe('asynchronous actions', ()=>{
     });
 
     let expectedActions = [
-      {type:types.REQUEST_BILL},
+      {
+        type:types.REQUEST_BILL,
+        payload:{
+          id:'6'
+        }
+      },
       {
         type:types.RECIEVE_BILL,
         payload: {
-          id: 6,
+          id: '6',
           bill: mockBill
         }
       }
