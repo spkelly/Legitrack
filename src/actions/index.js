@@ -1,5 +1,5 @@
 import axios from 'axios';
-import http from '../utils/http';
+
 
 
 import {
@@ -17,14 +17,7 @@ import {
 // const ROOT_URL = 'http://localhost:3000/bill/1053030';
 const ROOT_URL = 'https://legitrack-api.herokuapp.com';
 
-export function fetchTest(){
-  const testBill = axios.get(TEST_URL);
-  
-  return{
-    type: FETCH_TEST,
-    payload: testBill
-  };
-}
+
 //TODO: (Sean) Remove this when new fetchbill is working
 // export function fetchBill(id){
 //   const bill = axios.get(`${ROOT_URL}/bill/${id}`);

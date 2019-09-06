@@ -5,7 +5,7 @@ import mockBill from '../../components/Bill/__tests__/mockBill.json';
 import thunk from 'redux-thunk';
 
 import axios from 'axios';
-import http from '../../utils/http';
+
 import { fail } from 'assert';
 
 let middlewares = [thunk];
