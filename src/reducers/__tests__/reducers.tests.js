@@ -4,8 +4,6 @@ import errorReducer from '../error_reducer';
 import * as types from '../../actions/types';
 import fakeBill from '../../components/Bill/__tests__/mockBill.json';
 
-
-
 describe('Reducers', () => {
   describe('Search Reducer', () => {
     test('Should return correct initial state', () => {
@@ -53,24 +51,26 @@ describe('Reducers', () => {
         hasError: false,
       };
 
-      expect(errorReducer(undefined, {}).toEqual(expectedState));
+      expect(errorReducer(undefined, {})).toEqual(expectedState);
     });
+
     test('HANDLE_ERROR saves error into state', () => {
-      const errorMessage = 'test Error Message';
+      const errorMessage = 'Test Error Message';
       const action = { type: types.HANDLE_ERROR, payload: { errorMessage } };
       const expectedState = {
         errorMessage: errorMessage,
-        hasError: true
+        hasError: true,
       };
-      expect(errorReducer(undefined,action)).toEqual(expectedState);
+      expect(errorReducer(undefined, action)).toEqual(expectedState);
     });
-    test('CLEAR_ERROR removes exsisting error from state',()=>{
-      const action = { type: types.HANDLE_ERROR };
+    test('CLEAR_ERROR removes exsisting error from state', () => {
+      const initialState = { errorMessage: 'test Message', hasError: true };
+      const action = { type: types.CLEAR_ERROR };
       const expectedState = {
         errorMessage: '',
-        hasError: false
+        hasError: false,
       };
-      expect(errorReducer(undefined,action)).toEqual(expectedState);
+      expect(errorReducer(initialState, action)).toEqual(expectedState);
     });
   });
 });
