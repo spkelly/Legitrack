@@ -9,7 +9,7 @@ const initialState = {
 export default function(state=initialState, action){
   switch(action.type){
     case REQUEST_BILL:
-      return Object.assign({}, state, {id:action.id, isFetching:true});
+      return Object.assign({}, state, {id:action.payload.id, isFetching:true});
     case RECIEVE_BILL:
       return Object.assign({}, state, {
         id: action.id,

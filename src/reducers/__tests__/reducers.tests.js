@@ -42,6 +42,19 @@ describe('Reducers', () => {
       };
       expect(billReducer(undefined, {})).toEqual(expectedState);
     });
+    test('REQUEST_BILL sets the is fetching flag in state', () => {
+      let id = '6';
+      const expectedState = {
+        id: id,
+        isFetching: true,
+        bill: {},
+      };
+      let action = { type: types.REQUEST_BILL, payload: { id:id } };
+
+      expect(billReducer(undefined, action)).toEqual(expectedState);
+    });
+
+    test('RECIEVE_BILL adds bill to state and stops fetching', () => {});
   });
 
   describe('Error Reducer', () => {
