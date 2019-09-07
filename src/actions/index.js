@@ -7,7 +7,9 @@ import {
   RECIEVE_BILL,
   REQUEST_BILL,
   FETCH_TEST,
+  HANDLE_ERROR,
 } from './types';
+import { types } from '@babel/core';
 
 //TODO: Reorder functions in file
 //TODO: Write new fetchBill function
@@ -59,12 +61,26 @@ export function fetchSearch(query) {
     return axios
       .get(ROOT_URL + `/search?q=${query}`)
       .then(response => {
-        dispatch(recieveSearch(query, response.data.results));
+        if(response.status == 500 || response.status == 404){
+          dispatch(handleError('an error has occured retrieving search'));
+        }
+        else{
+          dispatch(recieveSearch(query, response.data.results));
+        }
       })
       .catch(e => {
         console.log(e);
       });
   };
+}
+
+export function handleError(errorMessage){
+  return {
+    type:HANDLE_ERROR,
+    payload:{
+      errorMessage:errorMessage
+    }
+  }
 }
 
 export function fetchBill(id) {
@@ -73,7 +89,12 @@ export function fetchBill(id) {
     return axios
       .get(ROOT_URL + `/bill/${id}`)
       .then(response => {
-        dispatch(recieveBill(id, response.data));
+        if(response.status == 500 || response.status == 404){
+          dispatch(handleError('an error has occured retrieving bill'));
+        }
+        else{
+          dispatch(recieveBill(id, response.data));
+        }
       })
       .catch(e => {
         console.log(e);

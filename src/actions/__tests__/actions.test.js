@@ -85,11 +85,11 @@ describe('asynchronous actions', () => {
     const expectedActions = [
       {
         type: types.REQUEST_SEARCH,
-        payload: { id: '6' },
+        payload: { query:term },
       },
       {
-        types: types.FETCH_SEARCH_ERROR,
-        payload: { errorMessage: 'an error has occured' },
+        type: types.HANDLE_ERROR,
+        payload: { errorMessage: 'an error has occured retrieving search' },
       },
     ];
 
@@ -124,8 +124,8 @@ describe('asynchronous actions', () => {
         payload: { id: '6' },
       },
       {
-        types: types.FETCH_BILL_ERROR,
-        payload: { errorMessage: 'an error has occured' },
+        type: types.HANDLE_ERROR,
+        payload: { errorMessage: 'an error has occured retrieving bill' },
       },
     ];
 
