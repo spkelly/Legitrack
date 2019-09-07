@@ -16,7 +16,7 @@ jest.mock('axios');
 
 describe('simple action creators', () => {
   describe('requestBill', () => {
-    test('it should return the proper action type and payload', () => {
+    test('should return the proper action type and payload', () => {
       let expectedAction = {
         type: 'request_bill',
         payload: { id: '6' },
@@ -27,7 +27,7 @@ describe('simple action creators', () => {
   });
 
   describe('recieveBill', () => {
-    test('it should return the proper action type and payload', () => {
+    test('should return the proper action type and payload', () => {
       let expectedAction = {
         type: 'recieve_bill',
         payload: {
@@ -42,7 +42,7 @@ describe('simple action creators', () => {
   });
 
   describe('requestSearch', () => {
-    test('it should return the proper action type and payload', () => {
+    test('should return the proper action type and payload', () => {
       let expectedAction = {
         type: 'request_search',
         payload: { query: 'term' },
@@ -54,7 +54,7 @@ describe('simple action creators', () => {
   });
 
   describe('recieveSearch', () => {
-    test('it should return the proper action type and payload', () => {});
+    test('should return the proper action type and payload', () => {});
   });
 });
 
@@ -73,6 +73,27 @@ describe('asynchronous actions', () => {
     ];
 
     await store.dispatch(actions.fetchSearch('test'));
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+  test('fetchSearch handles errors properly', async () => {
+    let store = mockStore(initialState);
+    let term = 'test';
+    axios.get.mockImplementation(() => {
+      return Promise.resolve(mockAxiosSearchResponse.failure);
+    });
+
+    const expectedActions = [
+      {
+        type: types.REQUEST_SEARCH,
+        payload: { id: '6' },
+      },
+      {
+        types: types.FETCH_SEARCH_ERROR,
+        payload: { errorMessage: 'an error has occured' },
+      },
+    ];
+
+    await store.dispatch(actions.fetchSearch(term));
     return expect(store.getActions()).toEqual(expectedActions);
   });
   test('fetchBill Dispatches correct actions', async () => {
@@ -87,6 +108,27 @@ describe('asynchronous actions', () => {
       { type: types.REQUEST_BILL, payload: { id: '6' } },
       { type: types.RECIEVE_BILL, payload: { id: '6', bill: mockBill } },
     ];
+    await store.dispatch(actions.fetchBill(billId));
+    return expect(store.getActions()).toEqual(expectedActions);
+  });
+  test('fectchBill handles errors properly', async () => {
+    let store = mockStore(initialState);
+    let billId = '6';
+    axios.get.mockImplementation(() => {
+      return Promise.resolve(mockAxiosBillResponse.failure);
+    });
+
+    const expectedActions = [
+      {
+        type: types.REQUEST_BILL,
+        payload: { id: '6' },
+      },
+      {
+        types: types.FETCH_BILL_ERROR,
+        payload: { errorMessage: 'an error has occured' },
+      },
+    ];
+
     await store.dispatch(actions.fetchBill(billId));
     return expect(store.getActions()).toEqual(expectedActions);
   });
