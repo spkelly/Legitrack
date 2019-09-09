@@ -75,7 +75,7 @@ describe('asynchronous actions', () => {
     await store.dispatch(actions.fetchSearch('test'));
     expect(store.getActions()).toEqual(expectedActions);
   });
-  test('fetchSearch handles errors properly', async () => {
+  test('fetchSearch handles http statuses properly', async () => {
     let store = mockStore(initialState);
     let term = 'test';
     axios.get.mockImplementation(() => {
@@ -90,6 +90,27 @@ describe('asynchronous actions', () => {
       {
         type: types.HANDLE_ERROR,
         payload: { errorMessage: 'an error has occured retrieving search' },
+      },
+    ];
+
+    await store.dispatch(actions.fetchSearch(term));
+    return expect(store.getActions()).toEqual(expectedActions);
+  });
+  test('fetchSearch handles thrown errors from axios',async()=>{
+    let store = mockStore(initialState);
+    let term = 'test';
+    axios.get.mockImplementation(() => {
+      return Promise.reject(new Error('axios error'));
+    });
+
+    const expectedActions = [
+      {
+        type: types.REQUEST_SEARCH,
+        payload: { query:term },
+      },
+      {
+        type: types.HANDLE_ERROR,
+        payload: { errorMessage: 'An error occured while processing this request' },
       },
     ];
 
@@ -111,7 +132,7 @@ describe('asynchronous actions', () => {
     await store.dispatch(actions.fetchBill(billId));
     return expect(store.getActions()).toEqual(expectedActions);
   });
-  test('fectchBill handles errors properly', async () => {
+  test('fectchBill handles http statuses properly', async () => {
     let store = mockStore(initialState);
     let billId = '6';
     axios.get.mockImplementation(() => {
@@ -131,5 +152,28 @@ describe('asynchronous actions', () => {
 
     await store.dispatch(actions.fetchBill(billId));
     return expect(store.getActions()).toEqual(expectedActions);
+  });
+  test('fetchBill handles thrown errors from axios',async()=>{
+    let billId = '6';
+    let store = mockStore(initialState);
+    axios.get.mockImplementation(() => {
+      return Promise.reject(new Error('axios error'));
+    });
+
+    const expectedActions = [
+      {
+        type: types.REQUEST_BILL,
+        payload: { id: '6' },
+      },
+      {
+        type: types.HANDLE_ERROR,
+        payload: { errorMessage: 'An error occured while processing this request' },
+      },
+    ];
+
+
+    await store.dispatch(actions.fetchBill(billId));
+    return expect(store.getActions()).toEqual(expectedActions);
+
   });
 });

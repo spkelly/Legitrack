@@ -6,12 +6,15 @@ import BillDescription from '../BillDescription';
 import BillHeading from '../BillHeading';
 import testBill from './mockBill';
 
-test('mounts', () => {
-  let container = document.createElement('div');
-  ReactDom.render(<Bill currentBill={testBill} />, container);
+
+describe('Bill',()=>{
+  test('mounts', () => {
+    let container = document.createElement('div');
+    ReactDom.render(<Bill currentBill={testBill} />, container);
+  });
 });
 
-describe('<BillDescription />', () => {
+describe('BillDescription', () => {
   test('renders text prop', () => {
     let description = 'test description';
     let wrapper = shallow(<BillDescription text={description} />);
@@ -23,7 +26,7 @@ describe('<BillDescription />', () => {
   });
 });
 
-describe('<BillHeading />', () => {
+describe('BillHeading', () => {
   test('renders text prop', () => {
     let title = 'test title';
     let wrapper = shallow(<BillHeading title={title} />);

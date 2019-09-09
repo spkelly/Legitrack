@@ -1,8 +1,27 @@
 import React from 'react';
 import PaginationBar from '../PaginationBar';
+import { shallow } from 'enzyme';
 
-test('does not display buttons when less then 2 pages needed',()=>{
-  expect(5).toBe(2);
+describe('PaginationBar', () => {
+  test('displays the correct number of page buttons', () => {
+    let pageCount = 5;
+    let wrapper = shallow(
+      <PaginationBar pageCount={pageCount} handleClick={() => {}} />
+    );
+
+    expect(wrapper.find('.pagination__button')).toHaveLength(pageCount);
+  });
+
+  test('clicking on a page button calls onClick handler', () => {
+    let mockClickHandler = jest.fn();
+    let wrapper = shallow(
+      <PaginationBar pageCount={5} handleClick={mockClickHandler} />
+    );
+    wrapper
+      .find('.pagination__button')
+      .last()
+      .simulate('click', { preventDefault: () => {} });
+
+    expect(mockClickHandler).toHaveBeenCalledTimes(1);
+  });
 });
-
-
