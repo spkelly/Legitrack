@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import store from './store';
 import Routes from './routes';
 
 import './images/Splash.jpg';
 import './stylesheets/main.scss';
 
-const Index = () => {
+// exported for testing purposes
+export const Index = () => {
   return (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
-  </Provider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Provider>
   );
 };
-
 
 ReactDOM.render(<Index />, document.getElementById('index'));

@@ -61,26 +61,25 @@ export function fetchSearch(query) {
     return axios
       .get(ROOT_URL + `/search?q=${query}`)
       .then(response => {
-        if(response.status == 500 || response.status == 404){
+        if (response.status == 500 || response.status == 404) {
           dispatch(handleError('an error has occured retrieving search'));
-        }
-        else{
+        } else {
           dispatch(recieveSearch(query, response.data.results));
         }
       })
       .catch(e => {
-        console.log(e);
+        dispatch(handleError('An error occured while processing this request'));
       });
   };
 }
 
-export function handleError(errorMessage){
+export function handleError(errorMessage) {
   return {
-    type:HANDLE_ERROR,
-    payload:{
-      errorMessage:errorMessage
-    }
-  }
+    type: HANDLE_ERROR,
+    payload: {
+      errorMessage: errorMessage,
+    },
+  };
 }
 
 export function fetchBill(id) {
@@ -89,15 +88,14 @@ export function fetchBill(id) {
     return axios
       .get(ROOT_URL + `/bill/${id}`)
       .then(response => {
-        if(response.status == 500 || response.status == 404){
+        if (response.status == 500 || response.status == 404) {
           dispatch(handleError('an error has occured retrieving bill'));
-        }
-        else{
+        } else {
           dispatch(recieveBill(id, response.data));
         }
       })
       .catch(e => {
-        console.log(e);
+        dispatch(handleError('An error occured while processing this request'));
       });
   };
 }

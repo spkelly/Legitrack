@@ -9,6 +9,8 @@ import testBill from './mockBill';
 
 describe('Bill',()=>{
   test('mounts', () => {
+    // simple fix to hide a console.warn message called in from react-dom
+    console.warn = jest.fn();
     let container = document.createElement('div');
     ReactDom.render(<Bill currentBill={testBill} />, container);
   });

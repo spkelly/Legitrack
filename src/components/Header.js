@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = function(){
+const Header = function() {
   return (
     <header className="header">
       <a href="/" className="header__logo">

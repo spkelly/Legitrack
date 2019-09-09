@@ -49,7 +49,7 @@ describe('Reducers', () => {
         isFetching: true,
         bill: {},
       };
-      let action = { type: types.REQUEST_BILL, payload: { id:id } };
+      let action = { type: types.REQUEST_BILL, payload: { id: id } };
 
       expect(billReducer(undefined, action)).toEqual(expectedState);
     });

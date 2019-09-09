@@ -6,48 +6,48 @@ import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 
 import Bill from '../Bill/Bill';
 
-
 class BillContainer extends Component {
-
-
-  componentWillMount(){
-      this.props.fetchBill(this.props.match.params.id);
+  componentWillMount() {
+    this.props.fetchBill(this.props.match.params.id);
   }
 
-  renderBill(){
-    if(this.props.currentBill){ 
-      return(
-        <Bill 
-          goBack={this.props.history.goBack} 
+  renderBill() {
+    if (this.props.currentBill) {
+      return (
+        <Bill
+          goBack={this.props.history.goBack}
           currentBill={this.props.currentBill}
         />
       );
     }
   }
 
-  renderPlaceholder(){
+  renderPlaceholder() {
     return (
-    <div className="bill__placeholder">
-      <GridLoader color={'#c0392b'} size={20}/>
-    </div>);
+      <div className="bill__placeholder">
+        <GridLoader color={'#c0392b'} size={20} />
+      </div>
+    );
   }
 
-  render(){
+  render() {
     return (
-      <div className="bill__wrapper"> 
-        {this.props.isFetching? this.renderPlaceholder() : this.renderBill()}
+      <div className="bill__wrapper">
+        {this.props.isFetching ? this.renderPlaceholder() : this.renderBill()}
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
-  return{
+function mapStateToProps(state) {
+  return {
     currentBill: state.currentBill.content,
     id: state.currentBill.id,
-    isFetching: state.currentBill.isFetching
+    isFetching: state.currentBill.isFetching,
   };
-};  
+}
 
-
-export default connect(mapStateToProps, actions)(BillContainer);
+export default connect(
+  mapStateToProps,
+  actions
+)(BillContainer);
