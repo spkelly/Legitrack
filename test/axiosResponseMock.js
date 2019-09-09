@@ -2,9 +2,7 @@ export const billResponse = (bill)=> ({
   success:{
     status: 200,
     statusText: 'OK',
-    data:{
-      bill
-    }
+    data:bill
   },
   failure:{
     status: 500

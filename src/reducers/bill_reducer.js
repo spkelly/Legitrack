@@ -13,7 +13,7 @@ export default function(state=initialState, action){
     case RECIEVE_BILL:
       return Object.assign({}, state, {
         id: action.id,
-        content: action.payload.data,
+        content: action.payload.bill,
         isFetching:false
       });
     default:

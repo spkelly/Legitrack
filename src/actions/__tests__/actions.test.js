@@ -36,7 +36,7 @@ describe('simple action creators', () => {
         },
       };
 
-      let returnedAction = actions.recieveBill('6', { bill: mockBill });
+      let returnedAction = actions.recieveBill('6', mockBill);
       expect(returnedAction).toEqual(expectedAction);
     });
   });

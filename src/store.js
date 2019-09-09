@@ -8,7 +8,7 @@ import reducers from './reducers';
 const store = createStore(
   reducers, 
   undefined, 
-  applyMiddleware(promise,thunk)
+  applyMiddleware(promise,thunk,logger)
 );
 
 

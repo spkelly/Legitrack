@@ -25,9 +25,10 @@ export function requestBill(id) {
   };
 }
 
-export const recieveBill = (id, { bill }) => {
+export const recieveBill = (id, bill ) => {
   return {
     type: RECIEVE_BILL,
+
     payload: {
       bill,
       id,
@@ -89,6 +90,7 @@ export function fetchBill(id) {
       .get(ROOT_URL + `/bill/${id}`)
       .then(response => {
         if (response.status == 500 || response.status == 404) {
+
           dispatch(handleError('an error has occured retrieving bill'));
         } else {
           dispatch(recieveBill(id, response.data));

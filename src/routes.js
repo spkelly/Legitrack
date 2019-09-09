@@ -7,13 +7,15 @@ import Results from './components/Results';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+console.log(typeof(Results))
+
 const Routes = (props) => {
   return(
 		<div>
 			<Header />
 				<Route exact path="/" component={ Home }></Route>
 				<Route path="/search" component={ Results }></Route>
-				<Route path="/bill/:id" component = { BillContainer }></Route>
+				<Route path="/bill/:id" component={ BillContainer }></Route>
 			<Footer />
 		</div>
   );

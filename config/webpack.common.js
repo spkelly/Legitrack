@@ -13,8 +13,8 @@ const htmlPlugin = new HTMLWebPackPlugin({
 });
 
 const commonConfig = {
-  entry: ['babel-polyfill','./src/index.js'],
-  
+  entry: ['./src/index.js'],
+  node: { fs: 'empty' },
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
