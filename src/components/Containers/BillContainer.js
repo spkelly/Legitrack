@@ -7,7 +7,7 @@ import GridLoader from 'react-spinners/dist/spinners/GridLoader';
 import Bill from '../Bill/Bill';
 
 class BillContainer extends Component {
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.fetchBill(this.props.match.params.id);
   }
 
