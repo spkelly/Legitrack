@@ -4,15 +4,21 @@ import { shallow } from 'enzyme';
 import Bill from '../Bill';
 import BillDescription from '../BillDescription';
 import BillHeading from '../BillHeading';
+import BillTracker from '../BillTracker';
 import testBill from './mockBill';
 
-
-describe('Bill',()=>{
+describe('Bill', () => {
   test('mounts', () => {
-    // simple fix to hide a console.warn message called in from react-dom
-    console.warn = jest.fn();
     let container = document.createElement('div');
     ReactDom.render(<Bill currentBill={testBill} />, container);
+  });
+
+  test('Renders Child Components', () => {
+    let wrapper = shallow(<Bill currentBill={testBill} />);
+
+    expect(wrapper.find(BillHeading)).toHaveLength(1);
+    expect(wrapper.find(BillDescription)).toHaveLength(1);
+    expect(wrapper.find(BillTracker)).toHaveLength(1);
   });
 });
 
