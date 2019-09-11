@@ -23,11 +23,13 @@ describe('Bill', () => {
 });
 
 describe('BillDescription', () => {
+
   test('renders text prop', () => {
     let description = 'test description';
     let wrapper = shallow(<BillDescription text={description} />);
     expect(wrapper.find('.paragraph').text()).toEqual(description);
   });
+  
   test('renders no "no description found" if text prop is undefined', () => {
     let wrapper = shallow(<BillDescription />);
     expect(wrapper.find('.paragraph').text()).toEqual('no description found');

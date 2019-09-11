@@ -8,7 +8,7 @@ export default class VoteContainer extends Component {
     super(props);
 
     this.state = {
-      currenVote: this.props.votes[0],
+      currentVote: this.props.votes[0],
       voteIndex: 0,
     };
 
@@ -16,7 +16,7 @@ export default class VoteContainer extends Component {
   }
 
   changeVote(voteIndex) {
-    this.setState({ currenVote: this.props.votes[voteIndex], voteIndex });
+    this.setState({ currentVote: this.props.votes[voteIndex], voteIndex });
   }
 
   render() {
@@ -29,7 +29,7 @@ export default class VoteContainer extends Component {
             votes={this.props.votes}
             selected={this.state.voteIndex}
           />
-          <VoteChart vote={this.state.currenVote} />
+          <VoteChart vote={this.state.currentVote} />
         </div>
       </div>
     );
