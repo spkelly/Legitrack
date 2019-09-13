@@ -1,6 +1,7 @@
 import billReducer from '../bill_reducer';
 import searchReducer from '../search_reducer';
 import errorReducer from '../error_reducer';
+import trackingReducer from '../tracking_reducer';
 import * as types from '../../actions/types';
 import fakeBill from '../../components/Bill/__tests__/mockBill.json';
 
@@ -55,6 +56,78 @@ describe('Reducers', () => {
     });
 
     test('RECIEVE_BILL adds bill to state and stops fetching', () => {});
+  });
+  describe('Tracking Reducer', () => {
+    test('returns correct default state', () => {
+      let expectedState = {
+        savedBills: [],
+        lastUpdated: null,
+      };
+      expect(trackingReducer(undefined, {})).toEqual(expectedState);
+    });
+    test('addBill adds new bill to savedBills', () => {
+      let expectedState = {
+        savedBills: [
+          {
+            id: 124567,
+            title: 'fake bill',
+            description: 'fake description',
+            isFetching: false,
+            changeHash: 'B358FE39CD90DBF5F7B6F',
+          },
+        ],
+        lastUpdated: null,
+      };
+
+      let action = {
+        type: types.ADD_BILL,
+        payload: {
+          title: 'fake bill',
+          id: 124567,
+          description: 'fake description',
+          changeHash: 'B358FE39CD90DBF5F7B6F',
+        },
+      };
+      expect(trackingReducer(undefined, action)).toEqual(expectedState);
+    });
+
+    test('removeBill removes selected bill from savedBills', () => {
+      let expectedState = {
+        savedBills: [{
+          id: 124567,
+          title: 'fake bill',
+          description: 'fake description',
+          isFetching: false,
+          changeHash: 'B358FE39CD90DBF5F7B6F',
+        }],
+        lastUpdated: null,
+      };
+
+      let initialState = {
+        savedBills: [
+          {
+            id: 124567,
+            title: 'fake bill',
+            description: 'fake description',
+            isFetching: false,
+            changeHash: 'B358FE39CD90DBF5F7B6F',
+          },
+          {
+            id: 391450,
+            title: 'fake bill 2',
+            description: 'another fake description',
+            isFetching: false,
+            changeHash: '33189CC3ADA54E88517',
+          }
+
+        ],
+        lastUpdated: null,
+      };
+
+      let action = { type: types.REMOVE_BILL, payload: 391450 };
+
+      expect(trackingReducer(initialState, action)).toEqual(expectedState);
+    });
   });
 
   describe('Error Reducer', () => {
