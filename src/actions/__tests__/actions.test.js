@@ -15,6 +15,9 @@ const mockAxiosSearchResponse = searchResponse('term');
 jest.mock('axios');
 
 describe('simple action creators', () => {
+  describe('saveBill',()=>{});
+  describe('removeBill',()=>{});
+  describe('fetchSavedBills',()=>{});
   describe('requestBill', () => {
     test('should return the proper action type and payload', () => {
       let expectedAction = {
