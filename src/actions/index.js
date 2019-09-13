@@ -6,15 +6,53 @@ import {
   REQUEST_SEARCH,
   RECIEVE_BILL,
   REQUEST_BILL,
+  REMOVE_BILL,
   FETCH_TEST,
+  REFRESH_BILLS,
+  REFRESH_BILLS_SUCCESS,
   HANDLE_ERROR,
+  ADD_BILL,
 } from './types';
-import { types } from '@babel/core';
 
 //TODO: Reorder functions in file
 //TODO: Write new fetchBill function
 // const ROOT_URL = 'http://localhost:3000/bill/1053030';
 const ROOT_URL = 'https://legitrack-api.herokuapp.com';
+
+export function saveBill(bill) {
+  return {
+    type: ADD_BILL,
+    payload: {
+      title: bill.title,
+      changeHash: bill.changeHash,
+      description: bill.description,
+      id: bill.id,
+    },
+  };
+}
+
+export function removeBill(billId) {
+  return {
+    type: REMOVE_BILL,
+    payload: billId,
+  };
+}
+
+export function refreshBills(bills) {
+  return dispatch => {
+    dispatch({ type: REFRESH_BILLS });
+    return Promise.all(
+      bills.map(bill => {
+        return axios
+          .get(ROOT_URL + `/bill/${bill.id}`)
+          .then(response => resolve(response.data));
+      })
+    )
+    .then(bills => {
+      dispatch({ type: REFRESH_BILLS_SUCCESS, payload: bills });
+    });
+  };
+}
 
 export function requestBill(id) {
   return {
@@ -25,7 +63,7 @@ export function requestBill(id) {
   };
 }
 
-export const recieveBill = (id, bill ) => {
+export const recieveBill = (id, bill) => {
   return {
     type: RECIEVE_BILL,
 
@@ -90,7 +128,6 @@ export function fetchBill(id) {
       .get(ROOT_URL + `/bill/${id}`)
       .then(response => {
         if (response.status == 500 || response.status == 404) {
-
           dispatch(handleError('an error has occured retrieving bill'));
         } else {
           dispatch(recieveBill(id, response.data));
