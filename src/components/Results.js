@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 import Search from './Search';
-import GridLoader from 'react-spinners/dist/spinners/GridLoader';
+import {GridLoader} from 'react-spinners';
 import ResultsItem from './ResultsItem';
 import Paginate from './Paginate/Paginate';
 

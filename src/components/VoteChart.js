@@ -1,10 +1,10 @@
 import React from 'react';
-import { Pie } from 'react-chartjs-2';
+// import { Pie } from 'react-chartjs-2';
 
 export default function({ vote }) {
   return (
     <div className="vote__chart">
-      <Pie
+      {/* <Pie
         data={{
           labels: ['Yay', 'Nay', 'NV', 'Pass'],
           datasets: [
@@ -15,7 +15,7 @@ export default function({ vote }) {
             },
           ],
         }}
-      />
+      /> */}
       <div className="vote__desc">
         <h2 className="heading__tertiary">{vote.desc}</h2>
       </div>
